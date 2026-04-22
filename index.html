@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>US Creative Paradise</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0a0a0a, #1a0033);
+  color: white;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+h1 {
+  font-size: 48px;
+  color: #ffe600;
+}
+
+p {
+  font-size: 20px;
+  color: #ddd;
+}
+
+button {
+  background: #ffe600;
+  color: black;
+  border: none;
+  padding: 15px 25px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.lang button {
+  margin-right: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="lang">
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('ru')">RU</button>
+<button onclick="setLang('es')">ES</button>
+</div>
+
+<h1 id="title"></h1>
+<p id="desc"></p>
+<button id="cta"></button>
+
+<h2 id="why"></h2>
+<ul id="list"></ul>
+
+</div>
+
+<script>
+const content = {
+  en: {
+    title: "More clients without wasting money on ads",
+    desc: "Offline advertising that brings real calls. One setup — long-term results.",
+    cta: "Call Now",
+    why: "Why it works?",
+    list: [
+      "No pay-per-click",
+      "Direct calls from clients",
+      "Works 24/7"
+    ]
+  },
+  ru: {
+    title: "Больше клиентов без затрат на рекламу",
+    desc: "Оффлайн реклама, которая даёт реальные звонки. Один раз сделал — работает годами.",
+    cta: "Позвонить",
+    why: "Почему это работает?",
+    list: [
+      "Нет оплаты за клики",
+      "Прямые звонки клиентов",
+      "Работает 24/7"
+    ]
+  },
+  es: {
+    title: "Más clientes sin gastar en publicidad",
+    desc: "Publicidad offline que genera llamadas reales. Un solo запуск — работает годами.",
+    cta: "Llamar ahora",
+    why: "¿Por qué funciona?",
+    list: [
+      "No pagas por clics",
+      "Clientes llaman directamente",
+      "Funciona 24/7"
+    ]
+  }
+};
+
+function setLang(lang) {
+  document.getElementById("title").innerText = content[lang].title;
+  document.getElementById("desc").innerText = content[lang].desc;
+  document.getElementById("cta").innerText = content[lang].cta;
+  document.getElementById("why").innerText = content[lang].why;
+
+  let list = document.getElementById("list");
+  list.innerHTML = "";
+  content[lang].list.forEach(item => {
+    let li = document.createElement("li");
+    li.innerText = item;
+    list.appendChild(li);
+  });
+}
+
+setLang('en');
+</script>
+
+</body>
+</html>
