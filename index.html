@@ -16,7 +16,7 @@
 
     .hero {
       background: #ffffff;
-      padding: 64px 24px 40px;
+      padding: 64px 24px 44px;
       border-bottom: 1px solid #ece7dc;
     }
 
@@ -67,7 +67,7 @@
       font-size: 24px;
       line-height: 1.45;
       color: #444;
-      max-width: 850px;
+      max-width: 900px;
     }
 
     .cta-row {
@@ -87,6 +87,7 @@
       transition: 0.18s ease;
       border: none;
       cursor: pointer;
+      text-align: center;
     }
 
     .btn-primary {
@@ -188,6 +189,37 @@
       text-decoration: none;
     }
 
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .compare-box {
+      background: #fff;
+      border: 1px solid #ebe4da;
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .compare-box h3 {
+      margin: 0 0 14px;
+      font-size: 26px;
+    }
+
+    .compare-box ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .compare-box li {
+      margin-bottom: 10px;
+      font-size: 18px;
+      line-height: 1.45;
+      color: #444;
+    }
+
     .offer-strip {
       background: #111;
       color: #fff;
@@ -265,7 +297,8 @@
       .trust,
       .three-col,
       .industries-grid,
-      .form-grid {
+      .form-grid,
+      .compare-grid {
         grid-template-columns: 1fr;
       }
       .full { grid-column: auto; }
@@ -274,7 +307,7 @@
     @media (max-width: 640px) {
       h1 { font-size: 36px; }
       .subtitle { font-size: 19px; }
-      .btn { width: 100%; text-align: center; }
+      .btn { width: 100%; }
       .offer-strip h2,
       .section h2 { font-size: 32px; }
     }
@@ -324,6 +357,30 @@
       <div class="card">
         <h3 id="step3Title"></h3>
         <p id="step3Text"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 id="compareTitle"></h2>
+    <p class="lead" id="compareLead"></p>
+
+    <div class="compare-grid">
+      <div class="compare-box">
+        <h3 id="adsTitle"></h3>
+        <ul>
+          <li id="ads1"></li>
+          <li id="ads2"></li>
+          <li id="ads3"></li>
+        </ul>
+      </div>
+      <div class="compare-box">
+        <h3 id="systemTitle"></h3>
+        <ul>
+          <li id="system1"></li>
+          <li id="system2"></li>
+          <li id="system3"></li>
+        </ul>
       </div>
     </div>
   </section>
@@ -382,25 +439,35 @@
     const content = {
       en: {
         eyebrow: "For HVAC, plumbing, electrical, roofing, handyman and local service businesses",
-        title: "Get More Local Calls Without Wasting Money on Ads",
-        subtitle: "Turn your vehicle, your local visibility and your street presence into real customer calls, booked jobs and steady growth.",
-        trust1: "More direct calls from real local buyers",
-        trust2: "Stay visible 24/7 without paying per click",
-        trust3: "Simple launch. Long-term results.",
-        howTitle: "How this gets you customers",
-        howLead: "Your next customers are already outside. The job is to put your business in front of them with a message they understand in seconds.",
-        step1Title: "1. Clear message",
-        step1Text: "Your offer gets easier to understand, easier to trust and easier to call.",
-        step2Title: "2. Daily visibility",
-        step2Text: "Your business stays in front of local buyers where they already drive, stop and notice.",
-        step3Title: "3. More incoming calls",
-        step3Text: "You get more direct calls instead of burning money on weak traffic and forgettable ads.",
+        title: "Build a system that keeps bringing you local calls",
+        subtitle: "Not another ad. Not another temporary push. A customer flow system that starts working right away and gets stronger over time.",
+        trust1: "Starts working right away",
+        trust2: "Gets stronger with every new contact",
+        trust3: "No paying for every click forever",
+        howTitle: "Why this works for a service business",
+        howLead: "Your customers already drive past homes, jobs, vans and local service brands every day. The question is simple: do they see you — or your competitor?",
+        step1Title: "1. You become visible fast",
+        step1Text: "Your business starts getting noticed where local buyers already live, drive and make decisions.",
+        step2Title: "2. People remember your name",
+        step2Text: "You stop being just another ad. You become a business people recognize when they need help.",
+        step3Title: "3. Every contact adds up",
+        step3Text: "One exposure leads to the next. More visibility builds more familiarity. More familiarity builds more calls.",
+        compareTitle: "Why this is stronger than regular advertising",
+        compareLead: "Ads disappear when the budget stops. A real local presence keeps working.",
+        adsTitle: "Typical ads",
+        ads1: "You pay again and again just to stay visible",
+        ads2: "One skipped ad and you disappear",
+        ads3: "You keep starting from zero",
+        systemTitle: "Your customer flow system",
+        system1: "Works in the real world where customers already move",
+        system2: "Builds recognition instead of renting attention",
+        system3: "Gets stronger instead of resetting every month",
         industriesTitle: "Top industries we start with",
-        industriesLead: "We launch first where local demand is strongest and where calls turn into money fastest.",
-        finalTitle: "Ready to get more calls?",
-        finalText: "Fill out the short form below. We’ll understand your business fast and show you the smartest next step.",
+        industriesLead: "We start where local demand is strongest and where calls turn into jobs the fastest.",
+        finalTitle: "Want a system that keeps bringing you calls?",
+        finalText: "Fill out the short form below. We’ll quickly understand your business and show you the smartest next step.",
         formTitle: "Get a Quote",
-        formNote: "4 short questions. No long forms. No wasted time.",
+        formNote: "4 short questions. No long form. No wasted time.",
         call: "CALL NOW",
         text: "TEXT NOW",
         quote: "GET A QUOTE",
@@ -411,25 +478,35 @@
       },
       ru: {
         eyebrow: "Для HVAC, plumbing, electrical, roofing, handyman и локального сервисного бизнеса",
-        title: "Получи больше локальных звонков без слива денег в рекламу",
-        subtitle: "Преврати свою машину, локальную видимость и уличное присутствие в реальные звонки клиентов, заказы и стабильный рост.",
-        trust1: "Больше прямых звонков от реальных местных клиентов",
-        trust2: "Видимость 24/7 без оплаты за каждый клик",
-        trust3: "Простой запуск. Долгий результат.",
-        howTitle: "Как это приводит тебе клиентов",
-        howLead: "Твои следующие клиенты уже снаружи. Твоя задача — показать им свой бизнес с понятным сообщением, которое считывается за секунды.",
-        step1Title: "1. Понятный оффер",
-        step1Text: "Твоё предложение становится понятнее, убедительнее и легче приводит к звонку.",
-        step2Title: "2. Ежедневная видимость",
-        step2Text: "Твой бизнес постоянно видят там, где местные покупатели уже ездят, останавливаются и замечают.",
-        step3Title: "3. Больше входящих звонков",
-        step3Text: "Ты получаешь больше прямых звонков вместо того, чтобы сжигать деньги на слабый трафик и забываемую рекламу.",
+        title: "Построй систему, которая стабильно приводит тебе локальные звонки",
+        subtitle: "Не ещё одна реклама. Не ещё один временный запуск. А система притока клиентов, которая начинает работать сразу и со временем становится только сильнее.",
+        trust1: "Начинает работать сразу",
+        trust2: "Усиливается с каждым новым контактом",
+        trust3: "Без вечной оплаты за каждый клик",
+        howTitle: "Почему это работает для сервисного бизнеса",
+        howLead: "Твои клиенты каждый день ездят мимо домов, объектов, сервисных машин и местных брендов. Вопрос простой: они видят тебя — или твоего конкурента?",
+        step1Title: "1. Ты быстро становишься заметным",
+        step1Text: "Твой бизнес начинают видеть там, где местные клиенты уже живут, ездят и принимают решение.",
+        step2Title: "2. Твоё имя начинают запоминать",
+        step2Text: "Ты перестаёшь быть просто очередной рекламой. Ты становишься бизнесом, который узнают, когда реально нужна помощь.",
+        step3Title: "3. Каждый новый контакт усиливает следующий",
+        step3Text: "Одно касание приводит к следующему. Больше видимости — больше узнаваемости. Больше узнаваемости — больше звонков.",
+        compareTitle: "Почему это сильнее обычной рекламы",
+        compareLead: "Реклама исчезает, когда заканчивается бюджет. Настоящее локальное присутствие продолжает работать.",
+        adsTitle: "Обычная реклама",
+        ads1: "Ты платишь снова и снова, просто чтобы быть на виду",
+        ads2: "Один пропущенный показ — и тебя уже нет",
+        ads3: "Каждый месяц начинаешь почти с нуля",
+        systemTitle: "Твоя система притока клиентов",
+        system1: "Работает в реальной жизни там, где уже двигаются клиенты",
+        system2: "Создаёт узнаваемость, а не арендует внимание",
+        system3: "Усиливается, а не сбрасывается каждый месяц",
         industriesTitle: "Топ-ниши, с которых начинаем",
         industriesLead: "Сначала идём туда, где локальный спрос сильнее всего и где звонки быстрее всего превращаются в деньги.",
-        finalTitle: "Готов получить больше звонков?",
+        finalTitle: "Хочешь систему, которая будет стабильно приводить звонки?",
         finalText: "Заполни короткую форму ниже. Мы быстро поймём твой бизнес и покажем самый умный следующий шаг.",
         formTitle: "Получить расчёт",
-        formNote: "4 коротких вопроса. Без длинных анкет. Без потери времени.",
+        formNote: "4 коротких вопроса. Без длинной анкеты. Без потери времени.",
         call: "ПОЗВОНИТЬ",
         text: "НАПИСАТЬ",
         quote: "ПОЛУЧИТЬ РАСЧЁТ",
@@ -440,22 +517,32 @@
       },
       es: {
         eyebrow: "Para HVAC, plomería, electricidad, roofing, handyman y negocios de servicio local",
-        title: "Obtén más llamadas locales sin tirar dinero en publicidad",
-        subtitle: "Convierte tu vehículo, tu visibilidad local y tu presencia en la calle en llamadas reales, trabajos cerrados y crecimiento constante.",
-        trust1: "Más llamadas directas de clientes locales reales",
-        trust2: "Visibilidad 24/7 sin pagar por cada clic",
-        trust3: "Lanzamiento simple. Resultados duraderos.",
-        howTitle: "Cómo esto te consigue clientes",
-        howLead: "Tus próximos clientes ya están afuera. La clave es poner tu negocio frente a ellos con un mensaje que entiendan en segundos.",
-        step1Title: "1. Oferta clara",
-        step1Text: "Tu oferta se vuelve más clara, más confiable y más fácil de convertir en llamada.",
-        step2Title: "2. Visibilidad diaria",
-        step2Text: "Tu negocio se mantiene frente a compradores locales donde ya manejan, paran y miran.",
-        step3Title: "3. Más llamadas entrantes",
-        step3Text: "Recibes más llamadas directas en vez de quemar dinero en tráfico débil y anuncios olvidables.",
+        title: "Construye un sistema que te traiga llamadas locales de forma constante",
+        subtitle: "No otra campaña. No otro empujón temporal. Sino un sistema de flujo de clientes que empieza a trabajar de inmediato y se vuelve más fuerte con el tiempo.",
+        trust1: "Empieza a trabajar de inmediato",
+        trust2: "Se fortalece con cada nuevo contacto",
+        trust3: "Sin pagar por cada clic para siempre",
+        howTitle: "Por qué esto funciona para un negocio de servicios",
+        howLead: "Tus clientes pasan todos los días frente a casas, trabajos, vans de servicio y marcas locales. La pregunta es simple: ¿te ven a ti o a tu competencia?",
+        step1Title: "1. Te vuelves visible rápido",
+        step1Text: "Tu negocio empieza a verse donde los clientes locales ya viven, manejan y toman decisiones.",
+        step2Title: "2. Empiezan a recordar tu nombre",
+        step2Text: "Dejas de ser otro anuncio más. Te conviertes en un negocio que la gente reconoce cuando realmente necesita ayuda.",
+        step3Title: "3. Cada contacto suma al siguiente",
+        step3Text: "Una exposición lleva a otra. Más visibilidad crea más reconocimiento. Más reconocimiento crea más llamadas.",
+        compareTitle: "Por qué esto es más fuerte que la publicidad normal",
+        compareLead: "La publicidad desaparece cuando se acaba el presupuesto. Una presencia local real sigue trabajando.",
+        adsTitle: "Publicidad común",
+        ads1: "Pagas una y otra vez solo para seguir visible",
+        ads2: "Un anuncio que se salta y desapareces",
+        ads3: "Cada mes vuelves a empezar desde cero",
+        systemTitle: "Tu sistema de flujo de clientes",
+        system1: "Funciona en el mundo real donde ya se mueven tus clientes",
+        system2: "Construye reconocimiento en vez de alquilar atención",
+        system3: "Se fortalece en vez de reiniciarse cada mes",
         industriesTitle: "Industrias principales para empezar",
         industriesLead: "Empezamos donde la demanda local es más fuerte y donde las llamadas se convierten en dinero más rápido.",
-        finalTitle: "¿Listo para recibir más llamadas?",
+        finalTitle: "¿Quieres un sistema que te traiga llamadas de forma constante?",
         finalText: "Completa el formulario corto abajo. Entenderemos tu negocio rápido y te mostraremos el siguiente paso más inteligente.",
         formTitle: "Solicitar cotización",
         formNote: "4 preguntas cortas. Sin formularios largos. Sin perder tiempo.",
@@ -469,7 +556,7 @@
       }
     };
 
-    let currentLang = "en";
+    let currentLang = "ru";
 
     function setLang(lang) {
       currentLang = lang;
@@ -487,6 +574,16 @@
       document.getElementById("step2Text").innerText = content[lang].step2Text;
       document.getElementById("step3Title").innerText = content[lang].step3Title;
       document.getElementById("step3Text").innerText = content[lang].step3Text;
+      document.getElementById("compareTitle").innerText = content[lang].compareTitle;
+      document.getElementById("compareLead").innerText = content[lang].compareLead;
+      document.getElementById("adsTitle").innerText = content[lang].adsTitle;
+      document.getElementById("ads1").innerText = content[lang].ads1;
+      document.getElementById("ads2").innerText = content[lang].ads2;
+      document.getElementById("ads3").innerText = content[lang].ads3;
+      document.getElementById("systemTitle").innerText = content[lang].systemTitle;
+      document.getElementById("system1").innerText = content[lang].system1;
+      document.getElementById("system2").innerText = content[lang].system2;
+      document.getElementById("system3").innerText = content[lang].system3;
       document.getElementById("industriesTitle").innerText = content[lang].industriesTitle;
       document.getElementById("industriesLead").innerText = content[lang].industriesLead;
       document.getElementById("finalTitle").innerText = content[lang].finalTitle;
@@ -534,7 +631,7 @@
       }
     }
 
-    setLang("en");
+    setLang("ru");
   </script>
 </body>
 </html>
