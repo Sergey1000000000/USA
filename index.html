@@ -736,7 +736,7 @@
       }
     };
 
-    let currentLang = "ru";
+    let currentLang = "en";
 
     function setLang(lang) {
       currentLang = lang;
@@ -836,6 +836,11 @@
 
       document.getElementById("formStatus").innerText = "...";
 
+      fetch(CRM_URL, {
+        method: "POST",
+        body: JSON.stringify(data)
+      }).catch(() => {});
+
       try {
         const response = await fetch(WEBHOOK_URL, {
           method: "POST",
@@ -856,7 +861,7 @@
       }
     }
 
-    setLang("ru");
+    setLang("en");
   </script>
 </body>
 </html>
