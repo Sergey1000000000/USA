@@ -345,6 +345,16 @@
 
     .footer { padding: 34px 24px 50px; color: #666; font-size: 15px; }
 
+    .footer a {
+      color: #111;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
     @media (max-width: 980px) {
       h1 { font-size: 44px; }
       .subtitle { font-size: 21px; }
@@ -527,6 +537,9 @@
 
   <div class="footer container">
     US Creative Paradise · Orlando, FL · Local Customer Flow System
+    <br><br>
+    <a href="/privacy-policy.html">Privacy Policy</a> |
+    <a href="/terms-and-conditions.html">Terms & Conditions</a>
   </div>
 
   <script>
@@ -735,7 +748,7 @@
       }
     };
 
-    let currentLang = "ru";
+    let currentLang = "en";
 
     function setLang(lang) {
       currentLang = lang;
