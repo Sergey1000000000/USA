@@ -1,100 +1,108 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy | US Creative Paradise</title>
-  <meta name="description" content="Privacy Policy for US Creative Paradise SMS and customer communication." />
+<div class="eyebrow" id="eyebrow"></div>
+  <h1 id="title"></h1>
+  <p class="subtitle" id="subtitle"></p>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f8f5ef;
-      color: #111;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 850px;
-      margin: 0 auto;
-      padding: 60px 24px;
-    }
-
-    .box {
-      background: #fff;
-      border: 1px solid #e8dfd2;
-      border-radius: 22px;
-      padding: 40px;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.08);
-    }
-
-    h1 {
-      margin-top: 0;
-      font-size: 42px;
-      line-height: 1.1;
-    }
-
-    h2 {
-      margin-top: 30px;
-      font-size: 24px;
-    }
-
-    p {
-      font-size: 18px;
-      color: #333;
-    }
-
-    a {
-      color: #111;
-      font-weight: 700;
-    }
-
-    .back {
-      display: inline-block;
-      margin-bottom: 24px;
-      text-decoration: none;
-      color: #111;
-      font-weight: 800;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="container">
-    <a class="back" href="/">← Back to Home</a>
-
-    <div class="box">
-      <h1>Privacy Policy</h1>
-
-      <p><strong>US Creative Paradise</strong></p>
-      <p><strong>Effective Date:</strong> April 10, 2026</p>
-
-      <p>We respect your privacy and are committed to protecting your personal information.</p>
-
-      <h2>Information We Collect</h2>
-      <p>We may collect your phone number and any information you provide when you contact us via SMS or other communication channels.</p>
-
-      <h2>How We Use Your Information</h2>
-      <p>We use your information only to respond to your inquiries, provide customer support, and communicate regarding your request. We do not use your information for unsolicited marketing messages.</p>
-
-      <h2>SMS Communication</h2>
-      <p>By contacting us via SMS, you consent to receive messages related to your request. Message frequency varies depending on your interaction. Standard message and data rates may apply.</p>
-
-      <p>We do not send unsolicited messages. We only respond to messages initiated by you.</p>
-
-      <h2>Data Sharing</h2>
-      <p>We do not sell, rent, or share your personal information with third parties for marketing purposes.</p>
-
-      <h2>Data Security</h2>
-      <p>We take reasonable measures to protect your information.</p>
-
-      <h2>Opt-Out</h2>
-      <p>You can opt out of SMS communication at any time by replying STOP. For help, reply HELP.</p>
-
-      <h2>Contact</h2>
-      <p>If you have any questions, please contact us at <a href="mailto:sergeykomovrs@gmail.com">sergeykomovrs@gmail.com</a>.</p>
-    </div>
+  <div class="cta-row">
+    <a id="callBtn" class="btn btn-primary" href="tel:+13214155540">CALL NOW</a>
+    <a id="textBtn" class="btn btn-secondary" href="sms:+13214155540">TEXT NOW</a>
+    <a class="btn btn-third" href="#quote-form" id="jumpBtn">GET A QUOTE</a>
   </div>
-</body>
-</html>
+
+  <div class="trust">
+    <div class="trust-item" id="trust1"></div>
+    <div class="trust-item" id="trust2"></div>
+    <div class="trust-item" id="trust3"></div>
+  </div>
+</div>
+
+<div class="three-col">
+  <div class="card">
+    <h3 id="step1Title"></h3>
+    <p id="step1Text"></p>
+  </div>
+  <div class="card">
+    <h3 id="step2Title"></h3>
+    <p id="step2Text"></p>
+  </div>
+  <div class="card">
+    <h3 id="step3Title"></h3>
+    <p id="step3Text"></p>
+  </div>
+</div>
+
+<div class="compare-grid">
+  <div class="compare-box">
+    <h3 id="adsTitle"></h3>
+    <ul>
+      <li id="ads1"></li>
+      <li id="ads2"></li>
+      <li id="ads3"></li>
+    </ul>
+  </div>
+
+  <div class="compare-box">
+    <h3 id="systemTitle"></h3>
+    <ul>
+      <li id="system1"></li>
+      <li id="system2"></li>
+      <li id="system3"></li>
+    </ul>
+  </div>
+</div>
+
+<div class="industry-grid">
+  <div class="industry-card" onclick="selectIndustry('HVAC')">
+    <h3 id="ind1Title"></h3>
+    <p id="ind1Text"></p>
+    <span id="indCta1"></span>
+  </div>
+  <div class="industry-card" onclick="selectIndustry('Plumbing')">
+    <h3 id="ind2Title"></h3>
+    <p id="ind2Text"></p>
+    <span id="indCta2"></span>
+  </div>
+  <div class="industry-card" onclick="selectIndustry('Electrical')">
+    <h3 id="ind3Title"></h3>
+    <p id="ind3Text"></p>
+    <span id="indCta3"></span>
+  </div>
+  <div class="industry-card" onclick="selectIndustry('Roofing')">
+    <h3 id="ind4Title"></h3>
+    <p id="ind4Text"></p>
+    <span id="indCta4"></span>
+  </div>
+  <div class="industry-card" onclick="selectIndustry('Handyman')">
+    <h3 id="ind5Title"></h3>
+    <p id="ind5Text"></p>
+    <span id="indCta5"></span>
+  </div>
+  <div class="industry-card" onclick="selectIndustry('Landscaping')">
+    <h3 id="ind6Title"></h3>
+    <p id="ind6Text"></p>
+    <span id="indCta6"></span>
+  </div>
+</div>
+
+  <div class="cta-row">
+    <a id="finalCallBtn" class="btn btn-primary" href="tel:+13214155540">CALL NOW</a>
+    <a id="finalTextBtn" class="btn btn-secondary" href="sms:+13214155540">TEXT NOW</a>
+  </div>
+
+  <div class="form-box" id="quote-form">
+    <h3 id="formTitle"></h3>
+
+    <div class="form-grid">
+      <input id="name" class="full" type="text" />
+      <input id="phone" type="text" />
+      <input id="business" type="text" />
+      <input id="vehicles" class="full" type="text" />
+    </div>
+
+    <div class="cta-row" style="margin-top:18px;">
+      <button id="quoteBtn" class="btn btn-third" onclick="sendLead()" type="button">GET A QUOTE</button>
+    </div>
+
+    <div id="formStatus" class="form-status"></div>
+    <div class="mini-note" id="formNote"></div>
+  </div>
+</div>
