@@ -6,17 +6,132 @@
 
   <title>US Creative Paradise | Local Customer Flow System</title>
 
-  <meta name="description" content="A local customer flow system for HVAC, plumbing, electrical, roofing, handyman and landscaping businesses" />
+  <meta name="description" content="A local customer flow system for HVAC, plumbing, electrical, roofing, handyman and landscaping businesses. Get more local calls with offline advertising." />
 
   <!-- Google Ads tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18116989824"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+
     gtag('js', new Date());
 
-    gtag('config', 'AW-18116989824');
+    gtag('config', 'AW-18116989824', {
+      'send_page_view': true
+    });
+
+    // UNIVERSAL TRACKING FUNCTION
+    function trackEvent(eventName, category, label) {
+      gtag('event', eventName, {
+        'event_category': category,
+        'event_label': label
+      });
+    }
+
+    // PHONE CLICK
+    function trackPhoneClick() {
+      gtag('event', 'phone_click', {
+        'event_category': 'lead',
+        'event_label': 'phone_call'
+      });
+    }
+
+    // SMS / MESSAGE CLICK
+    function trackMessageClick() {
+      gtag('event', 'message_click', {
+        'event_category': 'lead',
+        'event_label': 'sms_click'
+      });
+    }
+
+    // FORM SUBMIT
+    function trackFormSubmit() {
+      gtag('event', 'form_submit', {
+        'event_category': 'lead',
+        'event_label': 'form_sent'
+      });
+    }
+
+    // CTA BUTTON
+    function trackCTAClick(name) {
+      gtag('event', 'cta_click', {
+        'event_category': 'engagement',
+        'event_label': name
+      });
+    }
+
+    // OUTBOUND LINK
+    function trackOutboundClick(name) {
+      gtag('event', 'outbound_click', {
+        'event_category': 'outbound',
+        'event_label': name
+      });
+    }
+
+    // AUTO TRACK ALL LINKS (телефон, sms, внешние ссылки)
+    document.addEventListener('click', function(e) {
+      let link = e.target.closest('a');
+      if (!link) return;
+
+      let href = link.getAttribute('href');
+
+      if (!href) return;
+
+      // PHONE
+      if (href.startsWith('tel:')) {
+        trackPhoneClick();
+      }
+
+      // SMS
+      if (href.startsWith('sms:')) {
+        trackMessageClick();
+      }
+
+      // OUTBOUND
+      if (href.startsWith('http') && !href.includes(window.location.hostname)) {
+        trackOutboundClick(href);
+      }
+    });
+
+    // AUTO TRACK FORMS
+    document.addEventListener('submit', function(e) {
+      trackFormSubmit();
+    });
+
+    // SCROLL TRACKING
+    let scroll25 = false;
+    let scroll50 = false;
+    let scroll75 = false;
+    let scroll90 = false;
+
+    window.addEventListener('scroll', function() {
+      const scrollPercent = Math.round(
+        (window.scrollY + window.innerHeight) / document.body.scrollHeight * 100
+      );
+
+      if (scrollPercent >= 25 && !scroll25) {
+        scroll25 = true;
+        trackEvent('scroll_25', 'engagement', '25%');
+      }
+
+      if (scrollPercent >= 50 && !scroll50) {
+        scroll50 = true;
+        trackEvent('scroll_50', 'engagement', '50%');
+      }
+
+      if (scrollPercent >= 75 && !scroll75) {
+        scroll75 = true;
+        trackEvent('scroll_75', 'engagement', '75%');
+      }
+
+      if (scrollPercent >= 90 && !scroll90) {
+        scroll90 = true;
+        trackEvent('scroll_90', 'engagement', '90%');
+      }
+    });
+
   </script>
+</head>
 
   <style>
     * { box-sizing: border-box; }
