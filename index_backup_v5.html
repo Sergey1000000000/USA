@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>US Creative Paradise | Local Customer Flow System</title>
+
+  <meta name="description" content="A local customer flow system for HVAC, plumbing, electrical, roofing, handyman and landscaping businesses. Get more local calls with offline advertising." />
+
+  <!-- Google Ads tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18116989824"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    gtag('js', new Date());
+
+    gtag('config', 'AW-18116989824', {
+      'send_page_view': true
+    });
+
+    // UNIVERSAL TRACKING FUNCTION
+    function trackEvent(eventName, category, label) {
+      gtag('event', eventName, {
+        'event_category': category,
+        'event_label': label
+      });
+    }
+
+    // PHONE CLICK
+    function trackPhoneClick() {
+      gtag('event', 'phone_click', {
+        'event_category': 'lead',
+        'event_label': 'phone_call'
+      });
+    }
+
+    // SMS / MESSAGE CLICK
+    function trackMessageClick() {
+      gtag('event', 'message_click', {
+        'event_category': 'lead',
+        'event_label': 'sms_click'
+      });
+    }
+
+    // FORM SUBMIT
+    function trackFormSubmit() {
+      gtag('event', 'form_submit', {
+        'event_category': 'lead',
+        'event_label': 'form_sent'
+      });
+    }
+
+    // CTA BUTTON
+    function trackCTAClick(name) {
+      gtag('event', 'cta_click', {
+        'event_category': 'engagement',
+        'event_label': name
+      });
+    }
+
+    // OUTBOUND LINK
+    function trackOutboundClick(name) {
+      gtag('event', 'outbound_click', {
+        'event_category': 'outbound',
+        'event_label': name
+      });
+    }
+
+    // AUTO TRACK ALL LINKS (телефон, sms, внешние ссылки)
+    document.addEventListener('click', function(e) {
+      let link = e.target.closest('a');
+      if (!link) return;
+
+      let href = link.getAttribute('href');
+
+      if (!href) return;
+
+      // PHONE
+      if (href.startsWith('tel:')) {
+        trackPhoneClick();
+      }
+
+      // SMS
+      if (href.startsWith('sms:')) {
+        trackMessageClick();
+      }
+
+      // OUTBOUND
+      if (href.startsWith('http') && !href.includes(window.location.hostname)) {
+        trackOutboundClick(href);
+      }
+    });
+
+    // AUTO TRACK FORMS
+    document.addEventListener('submit', function(e) {
+      trackFormSubmit();
+    });
+
+    // SCROLL TRACKING
+    let scroll25 = false;
+    let scroll50 = false;
+    let scroll75 = false;
+    let scroll90 = false;
+
+    window.addEventListener('scroll', function() {
+      const scrollPercent = Math.round(
+        (window.scrollY + window.innerHeight) / document.body.scrollHeight * 100
+      );
+
+      if (scrollPercent >= 25 && !scroll25) {
+        scroll25 = true;
+        trackEvent('scroll_25', 'engagement', '25%');
+      }
+
+      if (scrollPercent >= 50 && !scroll50) {
+        scroll50 = true;
+        trackEvent('scroll_50', 'engagement', '50%');
+      }
+
+      if (scrollPercent >= 75 && !scroll75) {
+        scroll75 = true;
+        trackEvent('scroll_75', 'engagement', '75%');
+      }
+
+      if (scrollPercent >= 90 && !scroll90) {
+        scroll90 = true;
+        trackEvent('scroll_90', 'engagement', '90%');
+      }
+    });
+
+  </script>
+</head>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    :root {
+      --bg: #f8f5ef;
+      --white: #ffffff;
+      --black: #111111;
+      --text: #1f1f1f;
+      --muted: #4f4f4f;
+      --line: #e8dfd2;
+      --gold: #d8a94f;
+      --gold-light: #e7bd66;
+      --soft: #fbf8f2;
+      --shadow: 0 12px 35px rgba(0,0,0,0.08);
+      --shadow-strong: 0 18px 45px rgba(0,0,0,0.16);
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .hero {
+      background: radial-gradient(circle at top right, #fff7e3 0%, #ffffff 38%, #ffffff 100%);
+      padding: 52px 24px 54px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 38px;
+    }
+
+    .brand {
+      font-size: 23px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .lang {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .lang button {
+      background: var(--black);
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.22s ease;
+    }
+
+    .lang button:hover {
+      background: var(--gold);
+      color: #111;
+      transform: translateY(-2px);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 9px 15px;
+      margin-bottom: 18px;
+      border-radius: 999px;
+      background: #f2e6cc;
+      color: #5c4300;
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: 60px;
+      line-height: 1.03;
+      color: var(--black);
+      max-width: 990px;
+      letter-spacing: -0.045em;
+    }
+
+    .subtitle {
+      margin: 0 0 26px;
+      font-size: 24px;
+      line-height: 1.48;
+      color: var(--muted);
+      max-width: 930px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin: 26px 0 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 17px 26px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 900;
+      transition: all 0.24s ease;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      position: relative;
+    }
+
+    .btn:hover {
+      transform: scale(1.05) translateY(-2px);
+      box-shadow: var(--shadow-strong);
+      opacity: 1;
+    }
+
+    .btn:active { transform: scale(0.96); }
+
+    .btn-primary { background: var(--black); color: #fff; }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--black);
+      border: 1px solid var(--line);
+    }
+
+    .btn-third {
+      background: var(--gold);
+      color: #111;
+      box-shadow: 0 8px 24px rgba(216,169,79,0.35);
+      animation: softPulse 2.6s infinite;
+    }
+
+    .btn-third:hover { background: var(--gold-light); }
+
+    @keyframes softPulse {
+      0% { box-shadow: 0 0 0 0 rgba(216,169,79,0.45); }
+      70% { box-shadow: 0 0 0 12px rgba(216,169,79,0); }
+      100% { box-shadow: 0 0 0 0 rgba(216,169,79,0); }
+    }
+
+    .trust {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .trust-item {
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px;
+      font-size: 18px;
+      line-height: 1.45;
+      color: #2f2f2f;
+      font-weight: 800;
+      box-shadow: var(--shadow);
+    }
+
+    .section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 70px 24px;
+    }
+
+    .section h2 {
+      margin: 0 0 16px;
+      font-size: 44px;
+      color: var(--black);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .section p.lead {
+      margin: 0 0 28px;
+      font-size: 22px;
+      color: var(--muted);
+      max-width: 940px;
+      line-height: 1.5;
+    }
+
+    .three-col,
+    .proof-list,
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card, .compare-box, .industry-card, .proof-strip {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3, .industry-card h3, .compare-box h3 {
+      margin: 0 0 12px;
+      font-size: 25px;
+      color: var(--black);
+      line-height: 1.15;
+    }
+
+    .card p, .industry-card p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .compare-box ul { margin: 0; padding-left: 20px; }
+
+    .compare-box li {
+      margin-bottom: 10px;
+      font-size: 18px;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+
+    .industry-card {
+      cursor: pointer;
+      transition: all 0.24s ease;
+    }
+
+    .industry-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+      box-shadow: var(--shadow-strong);
+    }
+
+    .industry-card span {
+      display: inline-block;
+      margin-top: 16px;
+      font-weight: 900;
+      color: var(--black);
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .proof-item {
+      background: var(--soft);
+      border-radius: 18px;
+      padding: 22px;
+      font-size: 18px;
+      line-height: 1.45;
+      font-weight: 800;
+    }
+
+    .offer-strip {
+      background: linear-gradient(135deg, #111111, #252017);
+      color: #fff;
+      border-radius: 26px;
+      padding: 40px;
+      box-shadow: var(--shadow-strong);
+    }
+
+    .offer-strip h2 {
+      margin: 0 0 14px;
+      color: #fff;
+      font-size: 44px;
+      line-height: 1.08;
+    }
+
+    .offer-strip p {
+      margin: 0 0 22px;
+      font-size: 22px;
+      line-height: 1.45;
+      color: #e6e6e6;
+    }
+
+    .form-box {
+      margin-top: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 26px;
+    }
+
+    .form-box h3 {
+      margin: 0 0 18px;
+      font-size: 32px;
+      color: var(--black);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .form-grid input {
+      width: 100%;
+      padding: 16px;
+      border: 1px solid #d8d8d8;
+      border-radius: 12px;
+      font-size: 16px;
+      transition: all 0.2s ease;
+    }
+
+    .form-grid input:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px rgba(216,169,79,0.18);
+    }
+
+    .full { grid-column: 1 / -1; }
+
+    .form-status {
+      margin-top: 12px;
+      font-size: 16px;
+      color: #333;
+      min-height: 22px;
+      font-weight: 800;
+    }
+
+    .mini-note { margin-top: 10px; font-size: 15px; color: #666; }
+
+    .footer { padding: 34px 24px 50px; color: #666; font-size: 15px; }
+
+    .footer a {
+      color: #111;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 980px) {
+      h1 { font-size: 44px; }
+      .subtitle { font-size: 21px; }
+      .trust,
+      .three-col,
+      .compare-grid,
+      .industry-grid,
+      .proof-list,
+      .form-grid { grid-template-columns: 1fr; }
+      .full { grid-column: auto; }
+    }
+
+    @media (max-width: 640px) {
+      .topbar { align-items: flex-start; flex-direction: column; }
+      h1 { font-size: 36px; }
+      .subtitle { font-size: 19px; }
+      .btn { width: 100%; }
+      .offer-strip h2,
+      .section h2 { font-size: 32px; }
+      .hero { padding-top: 34px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="container">
+      <div class="topbar">
+        <div class="brand">US Creative Paradise</div>
+        <div class="lang">
+          <button onclick="setLang('en')">EN</button>
+          <button onclick="setLang('ru')">RU</button>
+          <button onclick="setLang('es')">ES</button>
+        </div>
+      </div>
+
+      <div class="eyebrow" id="eyebrow"></div>
+      <h1 id="title"></h1>
+      <p class="subtitle" id="subtitle"></p>
+
+      <div class="cta-row">
+        <a id="callBtn" class="btn btn-primary" href="tel:+13214155540">CALL NOW</a>
+        <a id="textBtn" class="btn btn-secondary" href="sms:+13214155540">TEXT NOW</a>
+        <a class="btn btn-third" href="#quote-form" id="jumpBtn">GET A QUOTE</a>
+      </div>
+
+      <div class="trust">
+        <div class="trust-item" id="trust1"></div>
+        <div class="trust-item" id="trust2"></div>
+        <div class="trust-item" id="trust3"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 id="howTitle"></h2>
+    <p class="lead" id="howLead"></p>
+
+    <div class="three-col">
+      <div class="card">
+        <h3 id="step1Title"></h3>
+        <p id="step1Text"></p>
+      </div>
+      <div class="card">
+        <h3 id="step2Title"></h3>
+        <p id="step2Text"></p>
+      </div>
+      <div class="card">
+        <h3 id="step3Title"></h3>
+        <p id="step3Text"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="proof-strip">
+      <h2 id="proofTitle"></h2>
+      <p class="lead" id="proofLead"></p>
+      <div class="proof-list">
+        <div class="proof-item" id="proof1"></div>
+        <div class="proof-item" id="proof2"></div>
+        <div class="proof-item" id="proof3"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 id="compareTitle"></h2>
+    <p class="lead" id="compareLead"></p>
+
+    <div class="compare-grid">
+      <div class="compare-box">
+        <h3 id="adsTitle"></h3>
+        <ul>
+          <li id="ads1"></li>
+          <li id="ads2"></li>
+          <li id="ads3"></li>
+        </ul>
+      </div>
+
+      <div class="compare-box">
+        <h3 id="systemTitle"></h3>
+        <ul>
+          <li id="system1"></li>
+          <li id="system2"></li>
+          <li id="system3"></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 id="industriesTitle"></h2>
+    <p class="lead" id="industriesLead"></p>
+
+    <div class="industry-grid">
+      <div class="industry-card" onclick="selectIndustry('HVAC')">
+        <h3 id="ind1Title"></h3>
+        <p id="ind1Text"></p>
+        <span id="indCta1"></span>
+      </div>
+      <div class="industry-card" onclick="selectIndustry('Plumbing')">
+        <h3 id="ind2Title"></h3>
+        <p id="ind2Text"></p>
+        <span id="indCta2"></span>
+      </div>
+      <div class="industry-card" onclick="selectIndustry('Electrical')">
+        <h3 id="ind3Title"></h3>
+        <p id="ind3Text"></p>
+        <span id="indCta3"></span>
+      </div>
+      <div class="industry-card" onclick="selectIndustry('Roofing')">
+        <h3 id="ind4Title"></h3>
+        <p id="ind4Text"></p>
+        <span id="indCta4"></span>
+      </div>
+      <div class="industry-card" onclick="selectIndustry('Handyman')">
+        <h3 id="ind5Title"></h3>
+        <p id="ind5Text"></p>
+        <span id="indCta5"></span>
+      </div>
+      <div class="industry-card" onclick="selectIndustry('Landscaping')">
+        <h3 id="ind6Title"></h3>
+        <p id="ind6Text"></p>
+        <span id="indCta6"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="offer-strip">
+      <h2 id="finalTitle"></h2>
+      <p id="finalText"></p>
+
+      <div class="cta-row">
+        <a id="finalCallBtn" class="btn btn-primary" href="tel:+13214155540">CALL NOW</a>
+        <a id="finalTextBtn" class="btn btn-secondary" href="sms:+13214155540">TEXT NOW</a>
+      </div>
+
+      <div class="form-box" id="quote-form">
+        <h3 id="formTitle"></h3>
+
+        <div class="form-grid">
+          <input id="name" class="full" type="text" />
+          <input id="phone" type="text" />
+          <input id="business" type="text" />
+          <input id="vehicles" class="full" type="text" />
+        </div>
+
+        <div class="cta-row" style="margin-top:18px;">
+          <button id="quoteBtn" class="btn btn-third" onclick="sendLead()" type="button">GET A QUOTE</button>
+        </div>
+
+        <div id="formStatus" class="form-status"></div>
+        <div class="mini-note" id="formNote"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer container">
+    US Creative Paradise · Orlando, FL · Local Customer Flow System
+    <br><br>
+    <a href="/privacy-policy.html">Privacy Policy</a> |
+    <a href="/terms-and-conditions.html">Terms & Conditions</a>
+  </div>
+
+  <script>
+    const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwiPw2BQ0Ok81-ysLa1iOm2IBfh8svEyjvV_-l8vVtGQZgpf-tZxbOkv8PSGzYZlQNOAg/exec";
+
+    const content = {
+      en: {
+        eyebrow: "For HVAC, plumbing, electrical, roofing, handyman and local service companies",
+        title: "Turn local visibility into a steady flow of customer calls",
+        subtitle: "We build a real-world customer flow system for service businesses: stronger visibility, clearer message, better recognition, and more reasons for local customers to call you — not your competitor.",
+        trust1: "Built for local service companies",
+        trust2: "Works where your customers already live, drive and decide",
+        trust3: "Creates recognition instead of renting attention forever",
+
+        howTitle: "How this helps your service business get more calls",
+        howLead: "Most local customers do not search for ten companies. They call the company they remember, trust, and see at the right moment. Our job is to make your business easier to notice, easier to remember, and easier to contact.",
+        step1Title: "1. You become easier to notice",
+        step1Text: "Your business gets placed in front of real local people in the physical world — where they already drive, work, park, shop and make decisions.",
+        step2Title: "2. Your name starts staying in their head",
+        step2Text: "When people repeatedly see a clean, clear, professional message, your company becomes familiar before they even need you.",
+        step3Title: "3. More people know who to call",
+        step3Text: "When the problem appears, they do not start from zero. They already remember a local company. That company should be yours.",
+
+        proofTitle: "This is not just printing. This is a customer-flow asset.",
+        proofLead: "You are not buying random stickers or signs. You are building a visible local system around your business, your vehicles, your jobs, and every customer touchpoint.",
+        proof1: "Your vehicles stop being just transportation — they become moving reminders.",
+        proof2: "Your completed jobs stop being invisible — they become proof in the neighborhood.",
+        proof3: "Your customers stop being one-time buyers — they become part of your visibility system.",
+
+        compareTitle: "Why this is stronger than regular advertising",
+        compareLead: "Paid ads can work, but the moment you stop paying, the visibility often disappears. A strong local presence keeps building memory and trust.",
+        adsTitle: "Typical paid ads",
+        ads1: "You keep paying just to stay visible.",
+        ads2: "People scroll, skip, forget, and move on.",
+        ads3: "Every month feels like starting again.",
+        systemTitle: "Your local customer-flow system",
+        system1: "Your brand appears in the real world where customers already move.",
+        system2: "Your message becomes familiar through repeated local exposure.",
+        system3: "Every vehicle, job and contact can strengthen the next one.",
+
+        industriesTitle: "This system works especially well for these businesses",
+        industriesLead: "If customers need to trust you before they call, and your work happens locally, this type of visibility is extremely valuable.",
+        indCta: "Start with this niche",
+        ind1Title: "HVAC",
+        ind1Text: "When AC or heat fails, people call the company they remember fastest. Strong local visibility puts your name in their head before the emergency.",
+        ind2Title: "Plumbing",
+        ind2Text: "Leaks, clogs and urgent repairs create fast decisions. If your brand is already familiar, you have a better chance to get the call.",
+        ind3Title: "Electrical",
+        ind3Text: "Electrical work requires trust. A clear, professional local presence makes your company look safer, more serious and easier to choose.",
+        ind4Title: "Roofing",
+        ind4Text: "Roofing is neighborhood-driven. When one house needs work, nearby homeowners notice. Your brand should be visible before they start searching.",
+        ind5Title: "Handyman",
+        ind5Text: "Handyman work is built on memory and convenience. The easier people remember you, the easier they call you for small and repeat jobs.",
+        ind6Title: "Landscaping",
+        ind6Text: "People see lawns, yards and finished work every day. Your brand should stay attached to the visible result.",
+
+        finalTitle: "Want to build a local customer-flow system for your business?",
+        finalText: "Fill out 4 short fields. We’ll look at your business type, vehicles and local opportunity — then show you the smartest first step.",
+        formTitle: "Get a Quote",
+        formNote: "No long form. No pressure. Just enough information to understand your business.",
+        namePlaceholder: "Your name",
+        phonePlaceholder: "Best phone number",
+        businessPlaceholder: "Your business type",
+        vehiclesPlaceholder: "How many vehicles do you have?",
+        call: "CALL NOW",
+        text: "TEXT NOW",
+        quote: "GET A QUOTE",
+        jump: "GET A QUOTE",
+        sent: "Request sent. We will contact you soon.",
+        error: "Error. Try again or text us directly.",
+        fill: "Please fill in all fields."
+      },
+
+      ru: {
+        eyebrow: "Для HVAC, сантехников, электриков, кровельщиков, handyman и локального сервиса",
+        title: "Преврати локальную видимость в стабильный поток звонков",
+        subtitle: "Мы создаём для сервисного бизнеса реальную систему притока клиентов: больше видимости, понятнее сообщение, сильнее узнаваемость и больше причин, чтобы местные клиенты звонили тебе — а не конкуренту.",
+        trust1: "Создано для локальных сервисных компаний",
+        trust2: "Работает там, где твои клиенты уже живут, ездят и принимают решения",
+        trust3: "Создаёт узнаваемость, а не вечную аренду внимания",
+
+        howTitle: "Как это помогает сервисному бизнесу получать больше звонков",
+        howLead: "Большинство локальных клиентов не выбирают из десяти компаний. Они звонят тому, кого помнят, кому доверяют и кого увидели в нужный момент. Наша задача — сделать твой бизнес заметнее, понятнее и легче для обращения.",
+        step1Title: "1. Тебя легче заметить",
+        step1Text: "Твой бизнес появляется перед реальными местными людьми в физическом мире — там, где они ездят, работают, паркуются, покупают и принимают решения.",
+        step2Title: "2. Твоё имя начинает запоминаться",
+        step2Text: "Когда человек регулярно видит понятное и профессиональное сообщение, твоя компания становится знакомой ещё до того, как ему понадобилась услуга.",
+        step3Title: "3. Больше людей знают, кому звонить",
+        step3Text: "Когда появляется проблема, клиент не начинает с нуля. Он уже помнит местную компанию. Эта компания должна быть твоей.",
+
+        proofTitle: "Это не просто печать. Это актив для привлечения клиентов.",
+        proofLead: "Ты покупаешь не случайные наклейки или таблички. Ты строишь видимую локальную систему вокруг бизнеса, машин, объектов и каждого контакта с клиентом.",
+        proof1: "Машины перестают быть просто транспортом — они становятся постоянным напоминанием.",
+        proof2: "Готовые работы перестают быть невидимыми — они становятся доказательством в районе.",
+        proof3: "Клиенты перестают быть разовой продажей — они становятся частью твоей системы видимости.",
+
+        compareTitle: "Почему это сильнее обычной рекламы",
+        compareLead: "Платная реклама может работать, но как только ты перестаёшь платить, видимость часто исчезает. Сильное локальное присутствие продолжает накапливать узнаваемость и доверие.",
+        adsTitle: "Обычная реклама",
+        ads1: "Ты платишь снова и снова, просто чтобы оставаться на виду.",
+        ads2: "Люди пролистывают, пропускают, забывают и идут дальше.",
+        ads3: "Каждый месяц ощущается как новый старт с нуля.",
+        systemTitle: "Твоя локальная система притока клиентов",
+        system1: "Твой бренд появляется в реальной жизни там, где уже двигаются клиенты.",
+        system2: "Твоё сообщение становится знакомым через повторяющиеся локальные касания.",
+        system3: "Каждая машина, каждый объект и каждый контакт могут усиливать следующий.",
+
+        industriesTitle: "Для этих бизнесов такая система особенно выгодна",
+        industriesLead: "Если клиенту важно доверять тебе до звонка, а твоя работа происходит локально, такая видимость становится очень ценной.",
+        indCta: "Начать с этой ниши",
+        ind1Title: "HVAC",
+        ind1Text: "Когда ломается кондиционер или отопление, люди звонят тому, кого быстрее вспоминают. Локальная видимость заранее помещает твоё имя в голову клиента.",
+        ind2Title: "Plumbing",
+        ind2Text: "Протечки, засоры и срочные ремонты требуют быстрых решений. Если бренд уже знаком, шанс получить звонок выше.",
+        ind3Title: "Electrical",
+        ind3Text: "Электрика требует доверия. Профессиональное локальное присутствие делает компанию серьёзнее, безопаснее и проще для выбора.",
+        ind4Title: "Roofing",
+        ind4Text: "Кровля сильно завязана на районы. Если один дом требует ремонта, соседи замечают. Твой бренд должен быть виден до того, как они начнут искать.",
+        ind5Title: "Handyman",
+        ind5Text: "Handyman-заказы держатся на памяти и удобстве. Чем легче тебя вспомнить, тем легче тебе звонят по мелким и повторным задачам.",
+        ind6Title: "Landscaping",
+        ind6Text: "Люди каждый день видят газоны, дворы и готовые работы. Твой бренд должен быть привязан к видимому результату.",
+
+        finalTitle: "Хочешь построить систему притока клиентов для своего бизнеса?",
+        finalText: "Заполни 4 коротких поля. Мы посмотрим на тип бизнеса, машины и локальную возможность — и покажем самый умный первый шаг.",
+        formTitle: "Получить расчёт",
+        formNote: "Без длинной анкеты. Без давления. Только то, что нужно, чтобы понять твой бизнес.",
+        namePlaceholder: "Ваше имя",
+        phonePlaceholder: "Лучший номер телефона",
+        businessPlaceholder: "Чем занимается бизнес",
+        vehiclesPlaceholder: "Сколько у вас машин?",
+        call: "ПОЗВОНИТЬ",
+        text: "НАПИСАТЬ",
+        quote: "ПОЛУЧИТЬ РАСЧЁТ",
+        jump: "ПОЛУЧИТЬ РАСЧЁТ",
+        sent: "Заявка отправлена. Мы скоро свяжемся.",
+        error: "Ошибка. Попробуй ещё раз или напиши нам напрямую.",
+        fill: "Заполни все поля."
+      },
+
+      es: {
+        eyebrow: "Para HVAC, plomería, electricidad, roofing, handyman y negocios locales de servicio",
+        title: "Convierte tu visibilidad local en más llamadas de clientes",
+        subtitle: "Creamos un sistema real de flujo de clientes para negocios de servicio: más visibilidad, mensaje más claro, más reconocimiento y más razones para que los clientes locales te llamen a ti — no a tu competencia.",
+        trust1: "Creado para compañías locales de servicio",
+        trust2: "Funciona donde tus clientes ya viven, manejan y deciden",
+        trust3: "Construye reconocimiento, no atención rentada para siempre",
+
+        howTitle: "Cómo esto ayuda a tu negocio de servicio a recibir más llamadas",
+        howLead: "La mayoría de clientes locales no compara diez compañías. Llaman a la empresa que recuerdan, en la que confían y que ven en el momento correcto. Nuestro trabajo es hacer que tu negocio sea más visible, más claro y más fácil de contactar.",
+        step1Title: "1. Es más fácil verte",
+        step1Text: "Tu negocio aparece frente a personas locales reales en el mundo físico — donde ya manejan, trabajan, estacionan, compran y toman decisiones.",
+        step2Title: "2. Empiezan a recordar tu nombre",
+        step2Text: "Cuando la gente ve un mensaje claro y profesional muchas veces, tu compañía se vuelve familiar antes de que necesiten el servicio.",
+        step3Title: "3. Más personas saben a quién llamar",
+        step3Text: "Cuando aparece el problema, el cliente no empieza desde cero. Ya recuerda una compañía local. Esa compañía debe ser la tuya.",
+
+        proofTitle: "Esto no es solo impresión. Es un activo para conseguir clientes.",
+        proofLead: "No compras stickers o letreros sueltos. Construyes un sistema visible alrededor de tu negocio, tus vehículos, tus trabajos y cada contacto con el cliente.",
+        proof1: "Tus vehículos dejan de ser solo transporte — se convierten en recordatorios constantes.",
+        proof2: "Tus trabajos terminados dejan de ser invisibles — se convierten en prueba dentro del vecindario.",
+        proof3: "Tus clientes dejan de ser una venta única — se vuelven parte de tu sistema de visibilidad.",
+
+        compareTitle: "Por qué esto es más fuerte que la publicidad normal",
+        compareLead: "Los anuncios pagados pueden funcionar, pero cuando dejas de pagar, muchas veces desaparece la visibilidad. Una presencia local fuerte sigue construyendo memoria y confianza.",
+        adsTitle: "Publicidad común",
+        ads1: "Pagas una y otra vez solo para seguir visible.",
+        ads2: "La gente desliza, salta, olvida y sigue.",
+        ads3: "Cada mes se siente como empezar desde cero.",
+        systemTitle: "Tu sistema local de flujo de clientes",
+        system1: "Tu marca aparece en la vida real donde ya se mueven tus clientes.",
+        system2: "Tu mensaje se vuelve familiar por exposición local repetida.",
+        system3: "Cada vehículo, trabajo y contacto puede fortalecer el siguiente.",
+
+        industriesTitle: "Este sistema funciona especialmente bien para estos negocios",
+        industriesLead: "Si el cliente necesita confiar en ti antes de llamar, y tu trabajo es local, esta visibilidad tiene mucho valor.",
+        indCta: "Empezar con esta industria",
+        ind1Title: "HVAC",
+        ind1Text: "Cuando falla el aire acondicionado o la calefacción, la gente llama al nombre que recuerda más rápido. La visibilidad local pone tu nombre en su mente antes de la emergencia.",
+        ind2Title: "Plumbing",
+        ind2Text: "Fugas, drenajes tapados y reparaciones urgentes crean decisiones rápidas. Si tu marca ya es familiar, tienes más oportunidad de recibir la llamada.",
+        ind3Title: "Electrical",
+        ind3Text: "El trabajo eléctrico necesita confianza. Una presencia local profesional hace que tu empresa se vea más seria, segura y fácil de elegir.",
+        ind4Title: "Roofing",
+        ind4Text: "Roofing se mueve mucho por vecindarios. Cuando una casa necesita trabajo, los vecinos miran. Tu marca debe estar visible antes de que busquen.",
+        ind5Title: "Handyman",
+        ind5Text: "Handyman depende de memoria y conveniencia. Mientras más fácil te recuerdan, más fácil te llaman para trabajos pequeños y repetidos.",
+        ind6Title: "Landscaping",
+        ind6Text: "La gente ve jardines, patios y trabajos terminados todos los días. Tu marca debe quedar conectada con ese resultado visible.",
+
+        finalTitle: "¿Quieres construir un sistema local de llamadas para tu negocio?",
+        finalText: "Completa 4 campos cortos. Veremos tu tipo de negocio, vehículos y oportunidad local — y te mostraremos el mejor primer paso.",
+        formTitle: "Solicitar cotización",
+        formNote: "Sin formularios largos. Sin presión. Solo lo necesario para entender tu negocio.",
+        namePlaceholder: "Tu nombre",
+        phonePlaceholder: "Mejor número de teléfono",
+        businessPlaceholder: "Tipo de negocio",
+        vehiclesPlaceholder: "¿Cuántos vehículos tienes?",
+        call: "LLAMAR AHORA",
+        text: "ESCRIBIR AHORA",
+        quote: "SOLICITAR COTIZACIÓN",
+        jump: "SOLICITAR COTIZACIÓN",
+        sent: "Solicitud enviada. Te contactaremos pronto.",
+        error: "Error. Inténtalo de nuevo o escríbenos directo.",
+        fill: "Completa todos los campos."
+      }
+    };
+
+    let currentLang = "en";
+
+    function setLang(lang) {
+      currentLang = lang;
+      const c = content[lang];
+
+      document.documentElement.lang = lang;
+      document.getElementById("eyebrow").innerText = c.eyebrow;
+      document.getElementById("title").innerText = c.title;
+      document.getElementById("subtitle").innerText = c.subtitle;
+      document.getElementById("trust1").innerText = c.trust1;
+      document.getElementById("trust2").innerText = c.trust2;
+      document.getElementById("trust3").innerText = c.trust3;
+
+      document.getElementById("howTitle").innerText = c.howTitle;
+      document.getElementById("howLead").innerText = c.howLead;
+      document.getElementById("step1Title").innerText = c.step1Title;
+      document.getElementById("step1Text").innerText = c.step1Text;
+      document.getElementById("step2Title").innerText = c.step2Title;
+      document.getElementById("step2Text").innerText = c.step2Text;
+      document.getElementById("step3Title").innerText = c.step3Title;
+      document.getElementById("step3Text").innerText = c.step3Text;
+
+      document.getElementById("proofTitle").innerText = c.proofTitle;
+      document.getElementById("proofLead").innerText = c.proofLead;
+      document.getElementById("proof1").innerText = c.proof1;
+      document.getElementById("proof2").innerText = c.proof2;
+      document.getElementById("proof3").innerText = c.proof3;
+
+      document.getElementById("compareTitle").innerText = c.compareTitle;
+      document.getElementById("compareLead").innerText = c.compareLead;
+      document.getElementById("adsTitle").innerText = c.adsTitle;
+      document.getElementById("ads1").innerText = c.ads1;
+      document.getElementById("ads2").innerText = c.ads2;
+      document.getElementById("ads3").innerText = c.ads3;
+      document.getElementById("systemTitle").innerText = c.systemTitle;
+      document.getElementById("system1").innerText = c.system1;
+      document.getElementById("system2").innerText = c.system2;
+      document.getElementById("system3").innerText = c.system3;
+
+      document.getElementById("industriesTitle").innerText = c.industriesTitle;
+      document.getElementById("industriesLead").innerText = c.industriesLead;
+      document.getElementById("ind1Title").innerText = c.ind1Title;
+      document.getElementById("ind1Text").innerText = c.ind1Text;
+      document.getElementById("ind2Title").innerText = c.ind2Title;
+      document.getElementById("ind2Text").innerText = c.ind2Text;
+      document.getElementById("ind3Title").innerText = c.ind3Title;
+      document.getElementById("ind3Text").innerText = c.ind3Text;
+      document.getElementById("ind4Title").innerText = c.ind4Title;
+      document.getElementById("ind4Text").innerText = c.ind4Text;
+      document.getElementById("ind5Title").innerText = c.ind5Title;
+      document.getElementById("ind5Text").innerText = c.ind5Text;
+      document.getElementById("ind6Title").innerText = c.ind6Title;
+      document.getElementById("ind6Text").innerText = c.ind6Text;
+
+      for (let i = 1; i <= 6; i++) {
+        document.getElementById("indCta" + i).innerText = c.indCta;
+      }
+
+      document.getElementById("finalTitle").innerText = c.finalTitle;
+      document.getElementById("finalText").innerText = c.finalText;
+      document.getElementById("formTitle").innerText = c.formTitle;
+      document.getElementById("formNote").innerText = c.formNote;
+
+      document.getElementById("callBtn").innerText = c.call;
+      document.getElementById("textBtn").innerText = c.text;
+      document.getElementById("finalCallBtn").innerText = c.call;
+      document.getElementById("finalTextBtn").innerText = c.text;
+      document.getElementById("quoteBtn").innerText = c.quote;
+      document.getElementById("jumpBtn").innerText = c.jump;
+
+      document.getElementById("name").placeholder = c.namePlaceholder;
+      document.getElementById("phone").placeholder = c.phonePlaceholder;
+      document.getElementById("business").placeholder = c.businessPlaceholder;
+      document.getElementById("vehicles").placeholder = c.vehiclesPlaceholder;
+    }
+
+    function selectIndustry(industry) {
+      document.getElementById("business").value = industry;
+      document.getElementById("quote-form").scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => document.getElementById("name").focus(), 500);
+    }
+
+    async function sendLead() {
+      const c = content[currentLang];
+
+      const data = {
+        name: document.getElementById("name").value.trim(),
+        phone: document.getElementById("phone").value.trim(),
+        business: document.getElementById("business").value.trim(),
+        source: document.getElementById("vehicles").value.trim()
+      };
+
+      if (!data.name || !data.phone || !data.business || !data.source) {
+        document.getElementById("formStatus").innerText = c.fill;
+        return;
+      }
+
+      document.getElementById("formStatus").innerText = "...";
+
+      try {
+        const response = await fetch(WEBHOOK_URL, {
+          method: "POST",
+          body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+          document.getElementById("formStatus").innerText = c.sent;
+          document.getElementById("name").value = "";
+          document.getElementById("phone").value = "";
+          document.getElementById("business").value = "";
+          document.getElementById("vehicles").value = "";
+        } else {
+          document.getElementById("formStatus").innerText = c.error;
+        }
+      } catch (e) {
+        document.getElementById("formStatus").innerText = c.error;
+      }
+    }
+
+    setLang("en");
+  </script>
+</body>
+</html>
