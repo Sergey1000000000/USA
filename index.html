@@ -20,7 +20,7 @@
       'send_page_view': true
     });
 
-    // GOOGLE ADS PHONE CONVERSION
+    // Google Ads phone conversion
     function gtag_report_conversion(url) {
       var callback = function () {
         if (typeof(url) !== 'undefined') {
@@ -38,7 +38,7 @@
       return false;
     }
 
-    // UNIVERSAL EVENT TRACKING
+    // Universal event tracking
     function trackEvent(eventName, category, label) {
       gtag('event', eventName, {
         'event_category': category,
@@ -46,7 +46,7 @@
       });
     }
 
-    // PHONE CLICK
+    // Phone click: sends both normal event and Google Ads conversion
     function trackPhoneClick(url) {
       gtag('event', 'phone_click', {
         'event_category': 'lead',
@@ -56,7 +56,7 @@
       return gtag_report_conversion(url);
     }
 
-    // SMS / MESSAGE CLICK
+    // SMS / message click
     function trackMessageClick() {
       gtag('event', 'message_click', {
         'event_category': 'lead',
@@ -64,7 +64,7 @@
       });
     }
 
-    // FORM SUBMIT
+    // Form submit
     function trackFormSubmit() {
       gtag('event', 'form_submit', {
         'event_category': 'lead',
@@ -72,7 +72,7 @@
       });
     }
 
-    // CTA BUTTON
+    // CTA button
     function trackCTAClick(name) {
       gtag('event', 'cta_click', {
         'event_category': 'engagement',
@@ -80,7 +80,7 @@
       });
     }
 
-    // OUTBOUND LINK
+    // Outbound link
     function trackOutboundClick(name) {
       gtag('event', 'outbound_click', {
         'event_category': 'outbound',
@@ -88,7 +88,7 @@
       });
     }
 
-    // AUTO TRACK ALL LINKS
+    // Auto-track links
     document.addEventListener('click', function(e) {
       var link = e.target.closest('a');
       if (!link) return;
@@ -96,30 +96,31 @@
       var href = link.getAttribute('href');
       if (!href) return;
 
-      // PHONE
       if (href.startsWith('tel:')) {
         e.preventDefault();
         trackPhoneClick(href);
         return;
       }
 
-      // SMS
       if (href.startsWith('sms:')) {
         trackMessageClick();
       }
 
-      // OUTBOUND LINKS
       if (href.startsWith('http') && !href.includes(window.location.hostname)) {
         trackOutboundClick(href);
       }
+
+      if (href.startsWith('#')) {
+        trackCTAClick(href);
+      }
     });
 
-    // AUTO TRACK FORMS
+    // Auto-track forms
     document.addEventListener('submit', function(e) {
       trackFormSubmit();
     });
 
-    // SCROLL TRACKING
+    // Scroll tracking
     let scroll25 = false;
     let scroll50 = false;
     let scroll75 = false;
@@ -151,7 +152,6 @@
       }
     });
   </script>
-</head>
 
   <style>
     * { box-sizing: border-box; }
@@ -901,10 +901,10 @@
       currentLang = lang;
       const c = content[lang];
 
-      document.documentElement.lang = lang;
       document.getElementById("eyebrow").innerText = c.eyebrow;
       document.getElementById("title").innerText = c.title;
       document.getElementById("subtitle").innerText = c.subtitle;
+
       document.getElementById("trust1").innerText = c.trust1;
       document.getElementById("trust2").innerText = c.trust2;
       document.getElementById("trust3").innerText = c.trust3;
@@ -993,7 +993,9 @@
         return;
       }
 
-      document.getElementById("formStatus").innerText = "...";
+      trackFormSubmit();
+
+      document.getElementById("formStatus").innerText = ".";
 
       try {
         const response = await fetch(WEBHOOK_URL, {
