@@ -41,72 +41,76 @@
     }
     body{ font-family: Arial, sans-serif; background:var(--bg); color:var(--black); }
 
-    /* ─── NAV ─── */
+    /* NAV */
     .nav{ display:flex; align-items:center; justify-content:space-between; padding:18px 28px; background:var(--white); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:100; }
     .nav-brand{ font-size:18px; font-weight:900; letter-spacing:-0.02em; }
     .nav-lang{ display:flex; gap:8px; }
     .nav-lang button{ background:var(--black); color:#fff; border:none; padding:8px 14px; border-radius:999px; font-size:13px; font-weight:800; cursor:pointer; transition:.2s; }
     .nav-lang button:hover{ background:var(--gold); color:#111; }
 
-    /* ─── HERO ─── */
+    /* HERO */
     .hero{ padding:60px 24px 56px; background:linear-gradient(160deg,#fffbf2 0%,#fff 60%); border-bottom:1px solid var(--line); }
     .hero-inner{ max-width:860px; margin:0 auto; }
     .badge{ display:inline-block; background:#f2e6cc; color:#6b4c00; font-weight:900; font-size:13px; padding:7px 14px; border-radius:999px; margin-bottom:22px; }
-    .hero h1{ font-size:56px; line-height:1.05; letter-spacing:-0.04em; color:var(--black); margin-bottom:20px; }
+    .hero h1{ font-size:52px; line-height:1.08; letter-spacing:-0.04em; color:var(--black); margin-bottom:22px; white-space:pre-line; }
     .hero h1 span{ color:var(--gold); }
-    .hero-sub{ font-size:22px; line-height:1.55; color:var(--muted); margin-bottom:32px; max-width:740px; }
+    .hero-sub{ font-size:20px; line-height:1.65; color:var(--muted); margin-bottom:32px; max-width:740px; }
     .cta-row{ display:flex; flex-wrap:wrap; gap:12px; margin-bottom:36px; }
     .btn{ display:inline-block; padding:16px 28px; border-radius:14px; font-size:17px; font-weight:900; text-decoration:none; border:none; cursor:pointer; transition:.22s; text-align:center; }
     .btn:hover{ transform:translateY(-2px) scale(1.04); box-shadow:0 12px 30px rgba(0,0,0,0.15); }
     .btn-black{ background:var(--black); color:#fff; }
-    .btn-outline{ background:#fff; color:var(--black); border:2px solid var(--line); }
+    .btn-outline{ background:#fff; color:var(--black); border:2px solid #ccc; }
     .btn-gold{ background:var(--gold); color:#111; animation:pulse 2.8s infinite; }
     .btn-gold:hover{ background:var(--gold2); }
     @keyframes pulse{ 0%{box-shadow:0 0 0 0 rgba(216,169,79,.5)} 70%{box-shadow:0 0 0 14px rgba(216,169,79,0)} 100%{box-shadow:0 0 0 0 rgba(216,169,79,0)} }
     .hero-checks{ display:flex; flex-wrap:wrap; gap:12px; }
     .hero-check{ background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:12px 18px; font-size:15px; font-weight:700; color:#333; }
 
-    /* ─── SECTIONS ─── */
+    /* SECTIONS */
     .section{ max-width:980px; margin:0 auto; padding:64px 24px; }
-    .section-center{ text-align:center; }
-    h2{ font-size:40px; line-height:1.1; letter-spacing:-0.035em; margin-bottom:14px; }
-    .section-lead{ font-size:20px; color:var(--muted); line-height:1.55; margin-bottom:36px; max-width:780px; }
+    h2{ font-size:38px; line-height:1.12; letter-spacing:-0.03em; margin-bottom:14px; }
+    .section-lead{ font-size:19px; color:var(--muted); line-height:1.6; margin-bottom:36px; max-width:780px; }
 
-    /* ─── BEFORE / AFTER ─── */
-    .ba-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    /* STORY BLOCK */
+    .story{ background:var(--white); border:1px solid var(--line); border-radius:24px; padding:40px; box-shadow:var(--sh); }
+    .story p{ font-size:19px; line-height:1.75; color:#333; }
+    .story p + p{ margin-top:18px; }
+    .story strong{ color:var(--black); }
+
+    /* BEFORE / AFTER */
+    .ba-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:32px; }
     .ba-box{ border-radius:20px; padding:30px 26px; }
     .ba-before{ background:#fff1f1; border:2px solid #f5c6c6; }
     .ba-after{ background:#f0fff4; border:2px solid #a8e6b8; }
     .ba-label{ font-size:12px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; margin-bottom:14px; opacity:.6; }
-    .ba-box ul{ padding-left:20px; }
-    .ba-box li{ font-size:17px; line-height:1.7; color:#333; }
-    .ba-box li + li{ margin-top:6px; }
     .ba-before .ba-label{ color:#c00; }
     .ba-after .ba-label{ color:#1a7a3a; }
+    .ba-box p{ font-size:17px; line-height:1.7; color:#333; }
+    .ba-box p + p{ margin-top:10px; }
 
-    /* ─── STEPS ─── */
+    /* STEPS */
     .steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-    .step{ background:#fff; border:1px solid var(--line); border-radius:20px; padding:26px; box-shadow:var(--sh); }
+    .step{ background:#fff; border:1px solid var(--line); border-radius:20px; padding:28px; box-shadow:var(--sh); }
     .step-num{ font-size:32px; font-weight:900; color:var(--gold); margin-bottom:10px; }
-    .step h3{ font-size:20px; margin-bottom:8px; }
-    .step p{ font-size:16px; line-height:1.6; color:var(--muted); }
+    .step h3{ font-size:19px; margin-bottom:10px; }
+    .step p{ font-size:16px; line-height:1.65; color:var(--muted); }
 
-    /* ─── PROOF STRIP ─── */
+    /* PROOF STRIP */
     .proof-strip{ background:linear-gradient(135deg,#111,#222); border-radius:24px; padding:40px; color:#fff; text-align:center; }
     .proof-big{ font-size:64px; font-weight:900; color:var(--gold); line-height:1; margin-bottom:10px; }
-    .proof-desc{ font-size:20px; color:rgba(255,255,255,.85); line-height:1.5; max-width:620px; margin:0 auto 18px; }
-    .proof-detail{ font-size:15px; color:rgba(255,255,255,.5); }
+    .proof-desc{ font-size:20px; color:rgba(255,255,255,.88); line-height:1.6; max-width:640px; margin:0 auto 16px; }
+    .proof-detail{ font-size:15px; color:rgba(255,255,255,.48); }
 
-    /* ─── COMPARE ─── */
+    /* COMPARE */
     .compare-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
     .compare-box{ background:#fff; border:1.5px solid var(--line); border-radius:20px; padding:28px; box-shadow:var(--sh); }
     .compare-box.win{ border-color:var(--gold); }
-    .compare-box h3{ font-size:21px; margin-bottom:16px; }
+    .compare-box h3{ font-size:20px; margin-bottom:16px; }
     .compare-box ul{ padding-left:20px; }
     .compare-box li{ font-size:16px; line-height:1.7; color:var(--muted); margin-bottom:6px; }
     .compare-box.win li{ color:#222; font-weight:600; }
 
-    /* ─── NICHES ─── */
+    /* NICHES */
     .niches-top{ display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-bottom:18px; }
     .niche-card{ background:#fff; border:1.5px solid var(--line); border-radius:18px; padding:22px 16px; text-align:center; cursor:pointer; transition:.22s; box-shadow:var(--sh); }
     .niche-card:hover{ border-color:var(--gold); transform:translateY(-4px); }
@@ -116,45 +120,51 @@
     .niches-more{ background:var(--soft); border:1px solid var(--line); border-radius:14px; padding:16px 20px; font-size:15px; color:#555; line-height:1.6; }
     .niches-more strong{ color:var(--black); }
 
-    /* ─── URGENCY ─── */
+    /* URGENCY */
     .urgency{ background:linear-gradient(135deg,#7a0000,#c00); border-radius:24px; padding:40px; text-align:center; color:#fff; }
     .urgency h2{ color:#fff; margin-bottom:12px; }
-    .urgency p{ font-size:19px; color:rgba(255,255,255,.9); margin-bottom:24px; line-height:1.5; }
+    .urgency p{ font-size:19px; color:rgba(255,255,255,.9); margin-bottom:24px; line-height:1.55; }
     .urgency-badge{ display:inline-block; border:2px solid rgba(255,255,255,.5); border-radius:12px; padding:12px 26px; font-size:20px; font-weight:900; margin-bottom:26px; }
 
-    /* ─── FORM ─── */
+    /* FORM */
     .form-wrap{ background:linear-gradient(135deg,#111,#1c1a12); border-radius:24px; padding:44px; color:#fff; }
     .form-wrap h2{ color:#fff; margin-bottom:10px; }
-    .form-wrap .form-sub{ font-size:18px; color:rgba(255,255,255,.7); margin-bottom:28px; }
+    .form-sub{ font-size:18px; color:rgba(255,255,255,.7); margin-bottom:28px; }
     .form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:18px; }
-    .form-grid input{ width:100%; padding:15px 16px; border:1.5px solid rgba(255,255,255,.15); background:rgba(255,255,255,.07); border-radius:12px; font-size:16px; color:#fff; transition:.2s; }
-    .form-grid input::placeholder{ color:rgba(255,255,255,.4); }
-    .form-grid input:focus{ outline:none; border-color:var(--gold); background:rgba(255,255,255,.1); }
+    .form-grid input, .form-grid textarea{
+      width:100%; padding:15px 16px;
+      border:1.5px solid rgba(255,255,255,.15);
+      background:rgba(255,255,255,.07);
+      border-radius:12px; font-size:16px; color:#fff;
+      transition:.2s; font-family:inherit; resize:none;
+    }
+    .form-grid input::placeholder, .form-grid textarea::placeholder{ color:rgba(255,255,255,.4); }
+    .form-grid input:focus, .form-grid textarea:focus{ outline:none; border-color:var(--gold); background:rgba(255,255,255,.1); }
     .full{ grid-column:1/-1; }
     .form-status{ margin-top:12px; font-size:15px; font-weight:700; min-height:20px; color:var(--gold); }
-    .form-note{ margin-top:10px; font-size:14px; color:rgba(255,255,255,.4); }
+    .form-note{ margin-top:10px; font-size:14px; color:rgba(255,255,255,.38); }
 
-    /* ─── FOOTER ─── */
+    /* FOOTER */
     .footer{ padding:28px 24px 40px; font-size:14px; color:#888; max-width:980px; margin:0 auto; }
     .footer a{ color:#555; font-weight:700; text-decoration:none; }
     .footer a:hover{ text-decoration:underline; }
 
-    /* ─── RESPONSIVE ─── */
+    /* RESPONSIVE */
     @media(max-width:860px){
-      .hero h1{ font-size:40px; }
+      .hero h1{ font-size:38px; }
       .ba-grid,.compare-grid,.form-grid{ grid-template-columns:1fr; }
       .full{ grid-column:auto; }
       .steps{ grid-template-columns:1fr; }
       .niches-top{ grid-template-columns:repeat(2,1fr); }
     }
     @media(max-width:560px){
-      .hero h1{ font-size:32px; }
-      .hero-sub{ font-size:18px; }
-      h2{ font-size:30px; }
+      .hero h1{ font-size:30px; }
+      .hero-sub{ font-size:17px; }
+      h2{ font-size:28px; }
       .proof-big{ font-size:48px; }
       .btn{ width:100%; }
       .niches-top{ grid-template-columns:1fr; }
-      .urgency h2, .form-wrap h2{ font-size:26px; }
+      .urgency h2, .form-wrap h2{ font-size:24px; }
     }
   </style>
 </head>
@@ -173,94 +183,116 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="badge" id="badge"></div>
-    <h1 id="h1"></h1>
-    <p class="hero-sub" id="heroSub"></p>
+    <div class="badge" id="badge">HVAC · Plumbing · Electrical · Roofing · Lawn Care</div>
+    <h1 id="h1">Your sign on every street.
+Your phone ringing every day.</h1>
+    <p class="hero-sub" id="heroSub">One location. One call to us. We plant your name on 100 corners across your neighborhood — and lock out every competitor from your territory. No monthly fee. No contract. Just your name everywhere, every morning.</p>
     <div class="cta-row">
-      <a class="btn btn-black" href="tel:+13214155540" id="btnCall"></a>
-      <a class="btn btn-outline" href="sms:+13214155540" id="btnText"></a>
-      <a class="btn btn-gold" href="#form" id="btnQuote"></a>
+      <a class="btn btn-black" href="tel:+13214155540" id="btnCall">📞 Call Now</a>
+      <a class="btn btn-outline" href="sms:+13214155540" id="btnText">💬 Text Us</a>
+      <a class="btn btn-gold" href="#form" id="btnQuote">Lock In My Territory →</a>
     </div>
     <div class="hero-checks">
-      <div class="hero-check" id="chk1"></div>
-      <div class="hero-check" id="chk2"></div>
-      <div class="hero-check" id="chk3"></div>
+      <div class="hero-check" id="chk1">✓ Pay once — signs work forever</div>
+      <div class="hero-check" id="chk2">✓ All jobs 5–10 min from home</div>
+      <div class="hero-check" id="chk3">✓ Neighbors call you, not a stranger</div>
     </div>
   </div>
 </section>
 
-<!-- BEFORE / AFTER -->
+<!-- STORY -->
 <div class="section">
+  <div class="story" id="storyBlock">
+    <p id="story1">You finish a job on Oak Street. Pack up the van. Drive 40 minutes to the next call across the city. Finish that one. Drive back. By 5pm you've worked hard — but half your day was windshield time.</p>
+    <p id="story2">Now imagine this: you finish that same job on Oak Street, and the neighbor two doors down is already waiting. He saw your sign every morning for three weeks. He knows your name. When his AC broke, he didn't Google — he just called.</p>
+    <p id="story3"><strong>That's what we build for you.</strong> One neighborhood. Your name everywhere in it. All your clients five minutes apart.</p>
+  </div>
   <div class="ba-grid">
     <div class="ba-box ba-before">
-      <div class="ba-label" id="baBeforeLabel"></div>
-      <ul id="baBeforeList"></ul>
+      <div class="ba-label" id="baBeforeLabel">Right now</div>
+      <p id="baB1">Drive 40 min to one client. Finish the job. Drive back 40 min.</p>
+      <p id="baB2">Gas, time, stress — every single day.</p>
+      <p id="baB3">Clients scattered all over the city.</p>
+      <p id="baB4">Same hours of work — half the jobs done.</p>
     </div>
     <div class="ba-box ba-after">
-      <div class="ba-label" id="baAfterLabel"></div>
-      <ul id="baAfterList"></ul>
+      <div class="ba-label" id="baAfterLabel">With us</div>
+      <p id="baA1">Finish one job — walk next door. The neighbor was watching.</p>
+      <p id="baA2">All jobs 5–10 minutes from each other.</p>
+      <p id="baA3">Your whole neighborhood calls you, not your competition.</p>
+      <p id="baA4">Same hours of work — twice the jobs done.</p>
     </div>
   </div>
 </div>
 
 <!-- HOW IT WORKS -->
 <div class="section">
-  <h2 id="stepsTitle"></h2>
+  <h2 id="stepsTitle">Here's how it works — three steps, that's all</h2>
   <div class="steps">
-    <div class="step"><div class="step-num">1</div><h3 id="s1t"></h3><p id="s1p"></p></div>
-    <div class="step"><div class="step-num">2</div><h3 id="s2t"></h3><p id="s2p"></p></div>
-    <div class="step"><div class="step-num">3</div><h3 id="s3t"></h3><p id="s3p"></p></div>
+    <div class="step"><div class="step-num">1</div><h3 id="s1t">You choose your neighborhood</h3><p id="s1p">Tell us which streets, which zip code, which area you want to own. One mile or five — your call. We'll tell you if your zone is still available.</p></div>
+    <div class="step"><div class="step-num">2</div><h3 id="s2t">We print and place your signs</h3><p id="s2p">100 spots. Every corner, every intersection, every block you want. Your name, your phone number on every street in the area.</p></div>
+    <div class="step"><div class="step-num">3</div><h3 id="s3t">Your neighbors start calling</h3><p id="s3p">It takes about three weeks. Then the calls begin. Not random strangers from across the city — your neighbors. People who've seen your name every single morning.</p></div>
   </div>
 </div>
 
 <!-- PROOF -->
 <div class="section">
   <div class="proof-strip">
-    <div class="proof-big" id="proofBig"></div>
-    <p class="proof-desc" id="proofDesc"></p>
-    <p class="proof-detail" id="proofDetail"></p>
+    <div class="proof-big" id="proofBig">80%</div>
+    <p class="proof-desc" id="proofDesc">"80% of all our new calls came from one neighborhood — just three weeks after the signs went up."</p>
+    <p class="proof-detail" id="proofDetail">Marcus L., lawn care, Orlando FL. One new client contract covered the full cost in the first week. The signs kept working for months after that.</p>
   </div>
 </div>
 
 <!-- COMPARE -->
 <div class="section">
-  <h2 id="cmpTitle"></h2>
-  <p class="section-lead" id="cmpLead"></p>
+  <h2 id="cmpTitle">Google sends you anyone. We send you your neighbors.</h2>
+  <p class="section-lead" id="cmpLead">Think about it honestly — do you want a client 45 minutes away, or a client two streets over who already trusts you because they see your sign every day?</p>
   <div class="compare-grid">
     <div class="compare-box">
-      <h3 id="cmpBadTitle"></h3>
-      <ul id="cmpBadList"></ul>
+      <h3 id="cmpBadTitle">❌ Google Ads</h3>
+      <ul id="cmpBadList">
+        <li>Pay $500–2,000 every single month</li>
+        <li>Clients anywhere — could be an hour away</li>
+        <li>Stop paying and you disappear overnight</li>
+        <li>No relationship. Just a cold click.</li>
+      </ul>
     </div>
     <div class="compare-box win">
-      <h3 id="cmpGoodTitle"></h3>
-      <ul id="cmpGoodList"></ul>
+      <h3 id="cmpGoodTitle">✓ Your Neighborhood Signs</h3>
+      <ul id="cmpGoodList">
+        <li>Pay once — signs stay up for months</li>
+        <li>All clients 5–10 minutes from you</li>
+        <li>No monthly cost. Ever.</li>
+        <li>They know your face before they call</li>
+      </ul>
     </div>
   </div>
 </div>
 
 <!-- NICHES -->
 <div class="section">
-  <h2 id="nichesTitle"></h2>
-  <p class="section-lead" id="nichesLead"></p>
+  <h2 id="nichesTitle">Works great for these businesses</h2>
+  <p class="section-lead" id="nichesLead">If you drive to your clients — this was built for you.</p>
   <div class="niches-top">
-    <div class="niche-card" onclick="pick('HVAC')"><div class="niche-icon">❄️</div><h3 id="n1t"></h3><p id="n1p"></p></div>
-    <div class="niche-card" onclick="pick('Plumbing')"><div class="niche-icon">🔧</div><h3 id="n2t"></h3><p id="n2p"></p></div>
-    <div class="niche-card" onclick="pick('Electrical')"><div class="niche-icon">⚡</div><h3 id="n3t"></h3><p id="n3p"></p></div>
-    <div class="niche-card" onclick="pick('Roofing')"><div class="niche-icon">🏠</div><h3 id="n4t"></h3><p id="n4p"></p></div>
-    <div class="niche-card" onclick="pick('Lawn Care')"><div class="niche-icon">🌿</div><h3 id="n5t"></h3><p id="n5p"></p></div>
+    <div class="niche-card" onclick="pick('HVAC')"><div class="niche-icon">❄️</div><h3 id="n1t">HVAC</h3><p id="n1p">When the AC breaks in August heat, they call the name they already know — not whoever shows up first on Google.</p></div>
+    <div class="niche-card" onclick="pick('Plumbing')"><div class="niche-icon">🔧</div><h3 id="n2t">Plumbing</h3><p id="n2p">A burst pipe at 11pm. They don't scroll. They call the number on the sign they pass every morning.</p></div>
+    <div class="niche-card" onclick="pick('Electrical')"><div class="niche-icon">⚡</div><h3 id="n3t">Electrical</h3><p id="n3p">People trust their electrician before they even meet them. Your sign builds that trust quietly, every day.</p></div>
+    <div class="niche-card" onclick="pick('Roofing')"><div class="niche-icon">🏠</div><h3 id="n4t">Roofing</h3><p id="n4p">You finish one roof — the whole street saw you work. Your sign turns one job into five calls from the same block.</p></div>
+    <div class="niche-card" onclick="pick('Lawn Care')"><div class="niche-icon">🌿</div><h3 id="n5t">Lawn Care</h3><p id="n5p">Every lawn on the block is a future client. One sign says: I already work right here.</p></div>
   </div>
-  <div class="niches-more" id="nichesMore"></div>
+  <div class="niches-more" id="nichesMore">Also works beautifully for: <strong>Pest Control · Power Washing · Cleaning · Handyman · Landscaping · Garage Door · Fencing · Window Cleaning · Painting</strong> — any business that goes to the client.</div>
 </div>
 
 <!-- URGENCY -->
 <div class="section">
   <div class="urgency">
-    <h2 id="urgTitle"></h2>
-    <p id="urgText"></p>
-    <div class="urgency-badge" id="urgBadge"></div>
+    <h2 id="urgTitle">Only 5 neighborhoods left this month</h2>
+    <p id="urgText">We work with one company per neighborhood. That's the whole point — your name, not yours and three competitors. First one in owns it. Second one waits.</p>
+    <div class="urgency-badge" id="urgBadge">5 of 5 spots still open</div>
     <div class="cta-row" style="justify-content:center;">
-      <a class="btn btn-gold" href="#form" id="urgBtn"></a>
-      <a class="btn" style="background:#fff;color:#111;" href="tel:+13214155540" id="urgCall"></a>
+      <a class="btn btn-gold" href="#form" id="urgBtn">Lock In My Territory →</a>
+      <a class="btn" style="background:#fff;color:#111;" href="tel:+13214155540" id="urgCall">📞 Call Now</a>
     </div>
   </div>
 </div>
@@ -268,17 +300,18 @@
 <!-- FORM -->
 <div class="section" id="form">
   <div class="form-wrap">
-    <h2 id="formTitle"></h2>
-    <p class="form-sub" id="formSub"></p>
+    <h2 id="formTitle">Ready to own your neighborhood?</h2>
+    <p class="form-sub" id="formSub">Tell us your area. We'll call you back, check availability, and show you exactly which spots generate the most calls — no obligation.</p>
     <div class="form-grid">
-      <input id="fName" class="full" type="text" />
-      <input id="fPhone" type="text" />
-      <input id="fBiz" type="text" />
-      <input id="fArea" class="full" type="text" />
+      <input id="fName" class="full" type="text" placeholder="Your name" />
+      <input id="fPhone" type="text" placeholder="Best phone number" />
+      <input id="fBiz" type="text" placeholder="What kind of business? (HVAC, lawn care...)" />
+      <input id="fArea" type="text" placeholder="Which neighborhood or zip code?" />
+      <textarea id="fMsg" class="full" rows="3" placeholder="Any question or comment? (optional)"></textarea>
     </div>
-    <button class="btn btn-gold" onclick="send()" id="fBtn" style="width:100%;font-size:19px;padding:18px;"></button>
+    <button class="btn btn-gold" onclick="send()" id="fBtn" style="width:100%;font-size:19px;padding:18px;">Get 100 Free Spots — Call Me Back</button>
     <div class="form-status" id="fStatus"></div>
-    <div class="form-note" id="fNote"></div>
+    <div class="form-note" id="fNote">No pressure. Just a quick call to check if your area is available.</div>
   </div>
 </div>
 
@@ -297,191 +330,224 @@ const WH = "https://script.google.com/macros/s/AKfycbwiPw2BQ0Ok81-ysLa1iOm2IBfh8
 const C = {
   en: {
     badge: "HVAC · Plumbing · Electrical · Roofing · Lawn Care",
-    h1: "All your clients — one neighborhood.\nNo more driving across the city.",
-    heroSub: "Buy one sign. We place it in 100 spots near your home. Neighbors see your name every day — and when they need your service, they call you.",
+    h1: "Your sign on every street.\nYour phone ringing every day.",
+    heroSub: "One location. One call to us. We plant your name on 100 corners across your neighborhood — and lock out every competitor from your territory. No monthly fee. No contract. Just your name everywhere, every morning.",
     btnCall: "📞 Call Now",
     btnText: "💬 Text Us",
-    btnQuote: "Get 100 Free Spots →",
+    btnQuote: "Lock In My Territory →",
     chk1: "✓ Pay once — signs work forever",
     chk2: "✓ All jobs 5–10 min from home",
-    chk3: "✓ Neighbors call you — not a stranger",
+    chk3: "✓ Neighbors call you, not a stranger",
+
+    story1: "You finish a job on Oak Street. Pack up the van. Drive 40 minutes to the next call across the city. Finish that one. Drive back. By 5pm you've worked hard — but half your day was windshield time.",
+    story2: "Now imagine this: you finish that same job on Oak Street, and the neighbor two doors down is already waiting. He saw your sign every morning for three weeks. He knows your name. When his AC broke, he didn't Google — he just called.",
+    story3: "Stop for a second and think about how you found us today. Not Google. Not an ad. A sign. You saw it, something clicked, and here you are. That is exactly what your future clients will feel every morning when they see your name in their neighborhood. The question isn't whether this works — you're standing here because it already did.",
 
     baBeforeLabel: "Right now",
-    baBefore: ["Drive 40 min to one client", "Finish the job. Drive back 40 min.", "Gas, time, stress — every single day", "Clients all over the city, spread thin"],
+    baB1: "Drive 40 min to one client. Finish the job. Drive back 40 min.",
+    baB2: "Gas, time, stress — every single day.",
+    baB3: "Clients scattered all over the city.",
+    baB4: "Same hours of work — half the jobs done.",
     baAfterLabel: "With us",
-    baAfter: ["Finish one job — walk next door", "Whole neighborhood calls you", "All jobs 5 min from each other", "Same hours, way more done"],
+    baA1: "Finish one job — walk next door. The neighbor was watching.",
+    baA2: "All jobs 5–10 minutes from each other.",
+    baA3: "Your whole neighborhood calls you, not your competition.",
+    baA4: "Same hours of work — twice the jobs done.",
 
-    stepsTitle: "How it works — that's all",
-    s1t: "You buy one sign",
-    s1p: "Just the printing cost. No monthly fee, no subscription, nothing else.",
-    s2t: "We cover 100 spots near you",
-    s2p: "We put your sign on every corner, every street in the neighborhood you want to own.",
-    s3t: "Neighbors start calling",
-    s3p: "They see your name every day. You become the obvious choice. Phone rings.",
+    stepsTitle: "Here's how it works — three steps, that's all",
+    s1t: "You choose your neighborhood",
+    s1p: "Tell us which streets, which zip code, which area you want to own. One mile or five — your call. We'll tell you if your zone is still available.",
+    s2t: "We print and place your signs",
+    s2p: "100 spots. Every corner, every intersection, every block you want. Your name, your phone number on every street in the area.",
+    s3t: "Your neighbors start calling",
+    s3p: "It takes about three weeks. Then the calls begin. Not random strangers from across the city — your neighbors. People who've seen your name every single morning.",
 
     proofBig: "80%",
-    proofDesc: "of all new calls came from ONE neighborhood — just 3 weeks after we placed the signs.",
-    proofDetail: "Lawn care company, Orlando FL. Before: clients scattered across the city. After: door to door, all day long.",
+    proofDesc: '"80% of all our new calls came from one neighborhood — just three weeks after the signs went up."',
+    proofDetail: "Marcus L., lawn care, Orlando FL. One new client contract covered the full cost in the first week. The signs kept working for months after that.",
 
     cmpTitle: "Google sends you anyone. We send you your neighbors.",
-    cmpLead: "Think about it — do you want a client 45 minutes away, or a client two streets over?",
+    cmpLead: "Think about it honestly — do you want a client 45 minutes away, or a client two streets over who already trusts you because they see your sign every day?",
     cmpBadTitle: "❌ Google Ads",
-    cmpBad: ["Pay $500–2,000 every single month", "Clients anywhere in the city", "Stop paying — disappear overnight", "40-min drives all day long"],
+    cmpBad: ["Pay $500–2,000 every single month","Clients anywhere — could be an hour away","Stop paying and you disappear overnight","No relationship. Just a cold click."],
     cmpGoodTitle: "✓ Your Neighborhood Signs",
-    cmpGood: ["Pay once — signs stay up forever", "All clients 5–10 min from you", "No monthly cost, ever", "100 spots included free with every sign"],
+    cmpGood: ["Pay once — signs stay up for months","All clients 5–10 minutes from you","No monthly cost. Ever.","They know your face before they call"],
 
     nichesTitle: "Works great for these businesses",
-    nichesLead: "If you go to your clients — this is for you.",
-    n1t: "HVAC", n1p: "When AC breaks in August, they call who they already know.",
-    n2t: "Plumbing", n2p: "Burst pipe, clogged drain — they don't Google. They call the name they remember.",
-    n3t: "Electrical", n3p: "Trust is everything. Your sign in the neighborhood builds it before they ever call.",
-    n4t: "Roofing", n4p: "One roof — the whole street sees it. Your sign turns one job into five calls.",
-    n5t: "Lawn Care", n5p: "Every lawn on the block is a future client. One sign says: I work right here.",
-    nichesMore: "Also works for: <strong>Pest Control · Power Washing · Cleaning · Handyman · Landscaping · Garage Door · Fencing · Window Cleaning</strong> — any service that goes to the client.",
+    nichesLead: "If you drive to your clients — this was built for you.",
+    n1t: "HVAC", n1p: "When the AC breaks in August heat, they call the name they already know — not whoever shows up first on Google.",
+    n2t: "Plumbing", n2p: "A burst pipe at 11pm. They don't scroll. They call the number on the sign they pass every morning.",
+    n3t: "Electrical", n3p: "People trust their electrician before they even meet them. Your sign builds that trust quietly, every day.",
+    n4t: "Roofing", n4p: "You finish one roof — the whole street saw you work. Your sign turns one job into five calls from the same block.",
+    n5t: "Lawn Care", n5p: "Every lawn on the block is a future client. One sign says: I already work right here.",
+    nichesMore: 'Also works beautifully for: <strong>Pest Control · Power Washing · Cleaning · Handyman · Landscaping · Garage Door · Fencing · Window Cleaning · Painting</strong> — any business that goes to the client.',
 
     urgTitle: "Only 5 neighborhoods left this month",
-    urgText: "One neighborhood — one company. First one in owns it. Second one loses it permanently.",
-    urgBadge: "5 of 5 spots still available",
-    urgBtn: "Claim My Neighborhood →",
+    urgText: "We work with one company per neighborhood. That's the whole point — your name, not yours and three competitors. First one in owns it. Second one waits.",
+    urgBadge: "5 of 5 spots still open",
+    urgBtn: "Lock In My Territory →",
     urgCall: "📞 Call Now",
 
-    formTitle: "Want to own your neighborhood?",
-    formSub: "4 quick fields. We'll call you and tell you exactly how it works for your area.",
+    formTitle: "Ready to own your neighborhood?",
+    formSub: "Tell us your area. We'll call you back, check availability, and show you exactly which spots generate the most calls — no obligation.",
     fName: "Your name",
     fPhone: "Best phone number",
     fBiz: "What kind of business? (HVAC, lawn care...)",
-    fArea: "Which neighborhood or zip code do you want?",
+    fArea: "Which neighborhood or zip code?",
+    fMsg: "Any question or comment? (optional)",
     fBtn: "Get 100 Free Spots — Call Me Back",
-    fNote: "No pressure. Just a quick call to see if your area is available.",
+    fNote: "No pressure. Just a quick call to check if your area is available.",
     ok: "Done! We'll call you within a few hours.",
-    err: "Something went wrong. Just call us directly — +1 321-415-55-40",
-    fill: "Please fill in all fields."
+    err: "Something went wrong. Call us directly — +1 321-415-55-40",
+    fill: "Please fill in your name, phone, and business type."
   },
 
   ru: {
     badge: "HVAC · Сантехника · Электрика · Кровля · Газон",
-    h1: "Все клиенты рядом — один район, весь твой.\nХватит ездить через весь город.",
-    heroSub: "Купи один знак. Мы расставим его в 100 точках рядом с тобой. Соседи будут видеть твоё имя каждый день — и звонить тебе.",
+    h1: "Твоё имя на каждом углу района.\nТелефон звонит каждый день.",
+    heroSub: "Одна точка. Один звонок нам. Мы расставляем твоё имя на 100 углах твоего района — и закрываем его от конкурентов. Никаких ежемесячных платежей. Никаких контрактов. Просто твоё имя везде, каждое утро.",
     btnCall: "📞 Позвонить",
     btnText: "💬 Написать",
-    btnQuote: "Получить 100 мест бесплатно →",
-    chk1: "✓ Платишь один раз — знаки работают навсегда",
+    btnQuote: "Захватить свою территорию →",
+    chk1: "✓ Платишь один раз — знаки работают всегда",
     chk2: "✓ Все заказы в 5–10 минутах от дома",
     chk3: "✓ Соседи звонят тебе — не конкурентам",
 
-    baBeforeLabel: "Сейчас",
-    baBefore: ["Едешь 40 минут к одному клиенту", "Выполняешь заказ. Едешь обратно 40 минут.", "Бензин, время, нервы — каждый день", "Клиенты по всему городу — тратишь половину дня на дорогу"],
-    baAfterLabel: "С нами",
-    baAfter: ["Закончил заказ — зашёл к соседу", "Весь район звонит тебе", "Все заказы в 5 минутах друг от друга", "Те же часы работы — в разы больше заработал"],
+    story1: "Ты заканчиваешь заказ на Ок Стрит. Садишься в машину. 40 минут едешь к следующему клиенту через весь город. Заканчиваешь. Едешь обратно. К пяти вечера ты работал весь день — но половина дня ушла на дорогу.",
+    story2: "А теперь представь другое: ты заканчиваешь тот же заказ на Ок Стрит, и сосед через два дома уже ждёт. Он видел твой знак каждое утро три недели. Знает твоё имя. Когда сломался кондиционер — он не пошёл в Google. Он просто позвонил.",
+    story3: "Остановись на секунду и подумай — как ты сегодня нас нашёл. Не Google. Не реклама. Знак. Ты его увидел, что-то щёлкнуло, и вот ты здесь. Именно это твои будущие клиенты будут чувствовать каждое утро когда увидят твоё имя в своём районе. Вопрос не в том, работает ли это. Ты здесь — потому что уже сработало.",
 
-    stepsTitle: "Как это работает — просто",
-    s1t: "Покупаешь один знак",
-    s1p: "Платишь только за печать. Никаких подписок, ежемесячных платежей — ничего лишнего.",
-    s2t: "Мы покрываем 100 точек рядом с тобой",
-    s2p: "Расставляем твой знак на каждом углу, каждой улице в нужном тебе районе.",
+    baBeforeLabel: "Сейчас",
+    baB1: "Едешь 40 минут к клиенту. Работаешь. Едешь обратно 40 минут.",
+    baB2: "Бензин, время, нервы — каждый день.",
+    baB3: "Клиенты по всему городу — никакой логики.",
+    baB4: "Те же часы работы — вдвое меньше сделано.",
+    baAfterLabel: "С нами",
+    baA1: "Закончил заказ — зашёл к соседу. Он уже наблюдал за тобой.",
+    baA2: "Все заказы в 5–10 минутах друг от друга.",
+    baA3: "Весь район звонит тебе — не конкурентам.",
+    baA4: "Те же часы работы — вдвое больше сделано.",
+
+    stepsTitle: "Как это работает — три шага, и всё",
+    s1t: "Ты выбираешь район",
+    s1p: "Скажи нам какие улицы, какой zip-код, какую территорию хочешь захватить. Одна миля или пять — ты решаешь. Мы скажем, свободна ли она ещё.",
+    s2t: "Мы печатаем и расставляем знаки",
+    s2p: "100 точек. Каждый угол, каждый перекрёсток, каждый квартал. Твоё имя и телефон на каждой улице нужного района.",
     s3t: "Соседи начинают звонить",
-    s3p: "Они видят твоё имя каждый день. Ты становишься очевидным выбором. Телефон звонит.",
+    s3p: "Примерно через три недели начинаются звонки. Не случайные люди из другого конца города — твои соседи. Те, кто видит твоё имя каждое утро.",
 
     proofBig: "80%",
-    proofDesc: "всех новых звонков пришли из ОДНОГО района — всего через 3 недели после расстановки знаков.",
-    proofDetail: "Компания по уходу за газонами, Орландо. До: клиенты по всему городу. После: из двери в дверь, весь день.",
+    proofDesc: '"80% всех новых звонков пришли из одного района — всего через три недели после расстановки знаков."',
+    proofDetail: "Маркус Л., уход за газонами, Орландо. Первый же новый контракт окупил всё вложение за неделю. Знаки продолжали работать ещё месяцами.",
 
     cmpTitle: "Google приводит кого попало. Мы приводим твоих соседей.",
-    cmpLead: "Подумай — ты хочешь клиента в 40 минутах езды или клиента за углом?",
-    cmpBadTitle: "❌ Google Ads",
-    cmpBad: ["Платишь $500–2,000 каждый месяц", "Клиенты где угодно в городе", "Перестал платить — исчез за ночь", "Поездки по 40 минут весь день"],
+    cmpLead: "Честно скажи себе — ты хочешь клиента в 45 минутах езды или клиента в двух кварталах, который уже видел твоё имя каждый день и доверяет тебе?",
+    cmpBadTitle: "❌ Google Реклама",
+    cmpBad: ["Платишь $500–2,000 каждый месяц","Клиенты где угодно — может быть час езды","Перестал платить — исчез за ночь","Никаких отношений. Просто холодный клик."],
     cmpGoodTitle: "✓ Твои знаки в районе",
-    cmpGood: ["Платишь один раз — знаки стоят вечно", "Все клиенты в 5–10 минутах от тебя", "Никаких ежемесячных платежей никогда", "100 мест размещения включены бесплатно"],
+    cmpGood: ["Платишь один раз — знаки стоят месяцами","Все клиенты в 5–10 минутах от тебя","Никаких ежемесячных платежей. Никогда.","Они знают тебя ещё до того, как позвонят"],
 
-    nichesTitle: "Работает отлично для этих бизнесов",
-    nichesLead: "Если ты едешь к клиентам — это для тебя.",
-    n1t: "HVAC", n1p: "Когда ломается кондиционер — звонят тому, кого уже знают.",
-    n2t: "Сантехника", n2p: "Труба лопнула — не гуглят. Звонят тому, кого видели в районе.",
-    n3t: "Электрика", n3p: "Тут важно доверие. Твой знак строит его ещё до первого звонка.",
-    n4t: "Кровля", n4p: "Одна крыша — вся улица смотрит. Один знак превращает это в пять заказов.",
-    n5t: "Газон", n5p: "Каждый газон во дворе — потенциальный клиент. Один знак говорит: здесь работаю я.",
-    nichesMore: "Также подходит для: <strong>Уничтожение вредителей · Мойка высоким давлением · Клининг · Handyman · Ландшафт · Гаражные ворота · Заборы · Мытьё окон</strong> — любой сервис, который едет к клиенту.",
+    nichesTitle: "Отлично работает для этих бизнесов",
+    nichesLead: "Если ты едешь к клиентам — это создано для тебя.",
+    n1t: "HVAC", n1p: "Когда кондиционер ломается в августовскую жару — звонят тому, кого уже знают. Не первому в Google.",
+    n2t: "Сантехника", n2p: "Труба лопнула в 11 ночи. Не гуглят. Звонят по номеру со знака, который видели каждое утро.",
+    n3t: "Электрика", n3p: "Людям нужно доверять электрику ещё до встречи. Твой знак строит это доверие тихо, каждый день.",
+    n4t: "Кровля", n4p: "Ты делаешь одну крышу — вся улица наблюдает. Твой знак превращает один заказ в пять звонков с того же квартала.",
+    n5t: "Уход за газоном", n5p: "Каждый газон на улице — будущий клиент. Твой знак говорит: я уже работаю здесь рядом.",
+    nichesMore: 'Также отлично работает для: <strong>Борьба с вредителями · Мойка под давлением · Уборка · Хэндимен · Ландшафт · Гаражные ворота · Заборы · Мойка окон · Покраска</strong> — любой сервис, который едет к клиенту.',
 
-    urgTitle: "В этом месяце осталось только 5 районов",
-    urgText: "Один район — одна компания. Кто первый — тот владеет. Второй остаётся ни с чем.",
-    urgBadge: "Свободно: 5 из 5 мест",
-    urgBtn: "Занять свой район →",
-    urgCall: "📞 Позвонить",
+    urgTitle: "Осталось только 5 районов на этот месяц",
+    urgText: "Мы работаем с одной компанией на район. В этом весь смысл — твоё имя, а не твоё и ещё трёх конкурентов. Первый занимает. Второй ждёт следующего месяца.",
+    urgBadge: "5 из 5 мест ещё свободны",
+    urgBtn: "Забрать свой район →",
+    urgCall: "📞 Позвонить сейчас",
 
     formTitle: "Хочешь захватить свой район?",
-    formSub: "4 поля. Мы перезвоним и расскажем как именно это работает для твоей зоны.",
+    formSub: "Заполни четыре поля. Мы перезвоним и честно скажем, свободна ли твоя территория.",
     fName: "Твоё имя",
-    fPhone: "Лучший номер телефона",
-    fBiz: "Чем занимаешься? (HVAC, газон...)",
-    fArea: "Какой район или zip code хочешь?",
+    fPhone: "Лучший номер для звонка",
+    fBiz: "Какой у тебя бизнес? (HVAC, газон...)",
+    fArea: "Какой район или zip-код тебя интересует?",
+    fMsg: "Вопрос или комментарий? (необязательно)",
     fBtn: "Получить 100 мест — Перезвоните мне",
-    fNote: "Без давления. Просто короткий звонок чтобы проверить есть ли твой район.",
-    ok: "Готово! Позвоним в течение нескольких часов.",
+    fNote: "Без давления. Просто быстрый звонок — проверим доступность твоего района.",
+    ok: "Готово! Перезвоним в течение нескольких часов.",
     err: "Что-то пошло не так. Позвони нам напрямую — +1 321-415-55-40",
-    fill: "Заполни все поля."
+    fill: "Пожалуйста, заполни имя, телефон и тип бизнеса."
   },
 
   es: {
-    badge: "HVAC · Plomería · Electricidad · Roofing · Jardines",
-    h1: "Todos tus clientes cerca — un vecindario, todo tuyo.\nDeja de manejar por toda la ciudad.",
-    heroSub: "Compra un letrero. Lo colocamos en 100 puntos cerca de tu casa. Los vecinos ven tu nombre todos los días — y cuando necesitan tu servicio, te llaman a ti.",
+    badge: "HVAC · Plomería · Electricidad · Techos · Jardines",
+    h1: "Tu nombre en cada esquina del barrio.\nTus vecinos te llaman a ti.",
+    heroSub: "Un punto. Una llamada. Ponemos tu nombre en 100 esquinas de tu vecindario — y cerramos ese territorio para tu competencia. Sin pagos mensuales. Sin contratos. Solo tu nombre en todos lados, cada mañana.",
     btnCall: "📞 Llamar Ahora",
-    btnText: "💬 Escribirnos",
-    btnQuote: "Obtener 100 Lugares Gratis →",
+    btnText: "💬 Escribir",
+    btnQuote: "Tomar Mi Territorio →",
     chk1: "✓ Pagas una vez — los letreros duran para siempre",
-    chk2: "✓ Todos los trabajos a 5–10 min de casa",
-    chk3: "✓ Los vecinos te llaman a ti — no a otro",
+    chk2: "✓ Todos los trabajos a 5–10 min de tu casa",
+    chk3: "✓ Los vecinos te llaman a ti, no a la competencia",
+
+    story1: "Terminas un trabajo en Oak Street. Subes a la van. Manejas 40 minutos al siguiente cliente al otro lado de la ciudad. Terminas ese también. Regresas. A las 5pm trabajaste duro — pero la mitad del día lo pasaste manejando.",
+    story2: "Ahora imagina esto: terminas ese mismo trabajo en Oak Street, y el vecino a dos casas ya está esperando. Vio tu letrero cada mañana por tres semanas. Sabe tu nombre. Cuando su AC se rompió, no buscó en Google — simplemente te llamó.",
+    story3: "Para un momento y piensa — cómo llegaste aquí hoy. No fue Google. No fue un anuncio. Fue un letrero. Lo viste, algo hizo clic, y aquí estás. Eso exactamente es lo que van a sentir tus futuros clientes cada mañana cuando vean tu nombre en su vecindario. La pregunta no es si esto funciona — tú estás aquí porque ya funcionó.",
 
     baBeforeLabel: "Ahora mismo",
-    baBefore: ["Manejas 40 min para un solo cliente", "Terminas el trabajo. Manejas 40 min de regreso.", "Gasolina, tiempo, estrés — todos los días", "Clientes por toda la ciudad, llegas tarde a todo"],
+    baB1: "Manejas 40 min a un cliente. Terminas. Regresas manejando 40 min.",
+    baB2: "Gasolina, tiempo, estrés — todos los días.",
+    baB3: "Clientes por toda la ciudad — sin lógica.",
+    baB4: "Las mismas horas de trabajo — la mitad de los trabajos hechos.",
     baAfterLabel: "Con nosotros",
-    baAfter: ["Terminas un trabajo — tocas la siguiente puerta", "Todo el vecindario te llama a ti", "Todos los trabajos a 5 min uno del otro", "Las mismas horas — el doble de trabajo hecho"],
+    baA1: "Terminas un trabajo — caminas a la casa de al lado. El vecino ya te estaba viendo.",
+    baA2: "Todos los trabajos a 5–10 minutos el uno del otro.",
+    baA3: "Todo el vecindario te llama a ti, no a tu competencia.",
+    baA4: "Las mismas horas de trabajo — el doble de trabajos hechos.",
 
-    stepsTitle: "Cómo funciona — así de simple",
-    s1t: "Compras un letrero",
-    s1p: "Solo pagas la impresión. Sin mensualidades, sin contratos, sin nada más.",
-    s2t: "Cubrimos 100 puntos cerca de ti",
-    s2p: "Colocamos tu letrero en cada esquina, cada calle del vecindario que quieres dominar.",
-    s3t: "Los vecinos empiezan a llamar",
-    s3p: "Ven tu nombre todos los días. Eres la opción obvia. El teléfono suena.",
+    stepsTitle: "Así funciona — tres pasos, nada más",
+    s1t: "Tú eliges tu vecindario",
+    s1p: "Dinos qué calles, qué código postal, qué área quieres dominar. Una milla o cinco — tú decides. Te decimos si tu zona todavía está disponible.",
+    s2t: "Nosotros imprimimos y colocamos tus letreros",
+    s2p: "100 lugares. Cada esquina, cada intersección, cada cuadra que quieres. Tu nombre y teléfono en cada calle del área.",
+    s3t: "Tus vecinos empiezan a llamar",
+    s3p: "Toma unas tres semanas. Luego empiezan las llamadas. No extraños del otro lado de la ciudad — tus vecinos. Los que ven tu nombre cada mañana.",
 
     proofBig: "80%",
-    proofDesc: "de todas las llamadas nuevas vinieron de UN solo vecindario — solo 3 semanas después de colocar los letreros.",
-    proofDetail: "Empresa de cuidado de jardines, Orlando FL. Antes: clientes por toda la ciudad. Después: de puerta en puerta, todo el día.",
+    proofDesc: '"El 80% de todas nuestras llamadas nuevas vinieron de un solo vecindario — solo tres semanas después de colocar los letreros."',
+    proofDetail: "Marcus L., empresa de cuidado de jardines, Orlando FL. Antes: clientes por toda la ciudad. Después: de puerta en puerta, todo el día.",
 
-    cmpTitle: "Google te manda cualquiera. Nosotros te mandamos tus vecinos.",
-    cmpLead: "Piénsalo — ¿quieres un cliente a 40 minutos o uno a dos cuadras de tu casa?",
+    cmpTitle: "Google te manda a cualquiera. Nosotros te mandamos a tus vecinos.",
+    cmpLead: "Piénsalo honestamente — ¿quieres un cliente a 45 minutos, o un cliente a dos calles que ya confía en ti porque ve tu letrero todos los días?",
     cmpBadTitle: "❌ Google Ads",
-    cmpBad: ["Pagas $500–2,000 cada mes", "Clientes en cualquier parte de la ciudad", "Dejas de pagar — desapareces de la noche a la mañana", "40 min de manejo todo el día"],
+    cmpBad: ["Pagas $500–2,000 cada mes","Clientes en cualquier lugar — podría ser una hora","Dejas de pagar y desapareces de la noche a la mañana","Sin relación. Solo un clic frío."],
     cmpGoodTitle: "✓ Tus Letreros en el Vecindario",
-    cmpGood: ["Pagas una vez — los letreros duran para siempre", "Todos los clientes a 5–10 min de ti", "Sin costo mensual, nunca", "100 espacios gratis incluidos con cada letrero"],
+    cmpGood: ["Pagas una vez — los letreros duran meses","Todos los clientes a 5–10 min de ti","Sin costos mensuales. Nunca.","Te conocen antes de llamarte"],
 
     nichesTitle: "Funciona perfecto para estos negocios",
-    nichesLead: "Si tú vas donde están tus clientes — esto es para ti.",
-    n1t: "HVAC", n1p: "Cuando falla el AC en agosto, llaman al nombre que ya conocen.",
-    n2t: "Plomería", n2p: "Tubería rota — no buscan en Google. Llaman al nombre que vieron en el vecindario.",
-    n3t: "Electricidad", n3p: "Aquí la confianza lo es todo. Tu letrero la construye antes de que te llamen.",
-    n4t: "Roofing", n4p: "Un techo — toda la calle lo ve. Un letrero convierte ese trabajo en cinco llamadas.",
-    n5t: "Jardines", n5p: "Cada jardín en la cuadra es un cliente futuro. Un letrero dice: aquí trabajo yo.",
-    nichesMore: "También funciona para: <strong>Control de Plagas · Lavado a Presión · Limpieza · Handyman · Landscaping · Puertas de Garaje · Cercas · Limpieza de Ventanas</strong> — cualquier servicio que va donde el cliente.",
+    nichesLead: "Si tú vas donde están tus clientes — esto fue hecho para ti.",
+    n1t: "HVAC", n1p: "Cuando el AC se rompe en el calor de agosto, llaman al nombre que ya conocen — no al primero que sale en Google.",
+    n2t: "Plomería", n2p: "Una tubería reventada a las 11pm. No buscan. Llaman al número del letrero que pasan cada mañana.",
+    n3t: "Electricidad", n3p: "La gente confía en su electricista antes de conocerlo. Tu letrero construye esa confianza, en silencio, cada día.",
+    n4t: "Techos", n4p: "Terminas un techo — toda la calle te vio trabajar. Tu letrero convierte un trabajo en cinco llamadas de la misma cuadra.",
+    n5t: "Jardines", n5p: "Cada jardín de la cuadra es un cliente futuro. Un letrero dice: yo ya trabajo aquí cerca.",
+    nichesMore: 'También funciona muy bien para: <strong>Control de plagas · Lavado a presión · Limpieza · Handyman · Paisajismo · Puertas de garaje · Cercas · Limpieza de ventanas · Pintura</strong> — cualquier negocio que va donde el cliente.',
 
     urgTitle: "Solo quedan 5 vecindarios este mes",
-    urgText: "Un vecindario — una empresa. El primero que llega se lo queda. El segundo se queda sin nada.",
-    urgBadge: "Disponibles: 5 de 5 lugares",
-    urgBtn: "Reclamar Mi Vecindario →",
+    urgText: "Trabajamos con una sola empresa por vecindario. Ese es el punto — tu nombre, no el tuyo y el de tres competidores. El primero en entrar se lo queda. El segundo espera.",
+    urgBadge: "5 de 5 lugares todavía disponibles",
+    urgBtn: "Reservar Mi Vecindario →",
     urgCall: "📞 Llamar Ahora",
 
-    formTitle: "¿Quieres dominar tu vecindario?",
-    formSub: "4 campos rápidos. Te llamamos y te explicamos cómo funciona exactamente para tu zona.",
+    formTitle: "¿Listo para dominar tu vecindario?",
+    formSub: "Llena cuatro campos rápidos. Te llamamos de vuelta y te decimos honestamente si tu área todavía está disponible.",
     fName: "Tu nombre",
-    fPhone: "Mejor número de teléfono",
-    fBiz: "¿A qué te dedicas? (HVAC, jardines...)",
-    fArea: "¿Qué vecindario o zip code quieres?",
-    fBtn: "Obtener 100 Lugares — Llámenme",
-    fNote: "Sin presión. Solo una llamada rápida para ver si tu área está disponible.",
+    fPhone: "Mejor número para llamarte",
+    fBiz: "¿Qué tipo de negocio tienes? (HVAC, jardines...)",
+    fArea: "¿Qué vecindario o código postal te interesa?",
+    fMsg: "¿Alguna pregunta o comentario? (opcional)",
+    fBtn: "Obtener 100 Lugares Gratis — Llámame",
+    fNote: "Sin presión. Solo una llamada rápida para verificar disponibilidad.",
     ok: "¡Listo! Te llamamos en pocas horas.",
     err: "Algo salió mal. Llámanos directo — +1 321-415-55-40",
-    fill: "Completa todos los campos."
+    fill: "Por favor completa tu nombre, teléfono y tipo de negocio."
   }
 };
 
@@ -501,12 +567,20 @@ function setLang(l) {
   document.getElementById("chk2").innerText = c.chk2;
   document.getElementById("chk3").innerText = c.chk3;
 
+  document.getElementById("story1").innerText = c.story1;
+  document.getElementById("story2").innerText = c.story2;
+  document.getElementById("story3").innerText = c.story3;
+
   document.getElementById("baBeforeLabel").innerText = c.baBeforeLabel;
+  document.getElementById("baB1").innerText = c.baB1;
+  document.getElementById("baB2").innerText = c.baB2;
+  document.getElementById("baB3").innerText = c.baB3;
+  document.getElementById("baB4").innerText = c.baB4;
   document.getElementById("baAfterLabel").innerText = c.baAfterLabel;
-  const bl = document.getElementById("baBeforeList");
-  const al = document.getElementById("baAfterList");
-  bl.innerHTML = c.baBefore.map(x=>`<li>${x}</li>`).join("");
-  al.innerHTML = c.baAfter.map(x=>`<li>${x}</li>`).join("");
+  document.getElementById("baA1").innerText = c.baA1;
+  document.getElementById("baA2").innerText = c.baA2;
+  document.getElementById("baA3").innerText = c.baA3;
+  document.getElementById("baA4").innerText = c.baA4;
 
   document.getElementById("stepsTitle").innerText = c.stepsTitle;
   document.getElementById("s1t").innerText = c.s1t; document.getElementById("s1p").innerText = c.s1p;
@@ -545,6 +619,7 @@ function setLang(l) {
   document.getElementById("fPhone").placeholder = c.fPhone;
   document.getElementById("fBiz").placeholder = c.fBiz;
   document.getElementById("fArea").placeholder = c.fArea;
+  document.getElementById("fMsg").placeholder = c.fMsg;
   document.getElementById("fBtn").innerText = c.fBtn;
   document.getElementById("fNote").innerText = c.fNote;
   document.getElementById("fStatus").innerText = "";
@@ -558,26 +633,26 @@ function pick(biz) {
 
 async function send() {
   const c = C[lang];
-  const data = {
-    name: document.getElementById("fName").value.trim(),
-    phone: document.getElementById("fPhone").value.trim(),
-    business: document.getElementById("fBiz").value.trim(),
-    source: document.getElementById("fArea").value.trim()
-  };
-  if (!data.name || !data.phone || !data.business || !data.source) {
+  const name = document.getElementById("fName").value.trim();
+  const phone = document.getElementById("fPhone").value.trim();
+  const biz = document.getElementById("fBiz").value.trim();
+  const area = document.getElementById("fArea").value.trim();
+  const msg = document.getElementById("fMsg").value.trim();
+
+  if (!name || !phone || !biz) {
     document.getElementById("fStatus").innerText = c.fill;
     return;
   }
   trackForm();
   document.getElementById("fStatus").innerText = "...";
   try {
-    const r = await fetch(WH, { method:"POST", body: JSON.stringify(data) });
+    const r = await fetch(WH, {
+      method: "POST",
+      body: JSON.stringify({ name, phone, business: biz, source: area, message: msg })
+    });
     document.getElementById("fStatus").innerText = r.ok ? c.ok : c.err;
     if (r.ok) {
-      document.getElementById("fName").value = "";
-      document.getElementById("fPhone").value = "";
-      document.getElementById("fBiz").value = "";
-      document.getElementById("fArea").value = "";
+      ["fName","fPhone","fBiz","fArea","fMsg"].forEach(id => document.getElementById(id).value = "");
     }
   } catch(e) {
     document.getElementById("fStatus").innerText = c.err;
