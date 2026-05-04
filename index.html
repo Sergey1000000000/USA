@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>US Creative Paradise | Buy 1 Sign — Get 100 Ad Placements FREE | Orlando FL</title>
-  <meta name="description" content="Buy 1 sign — get 100 ad placements FREE in your neighborhood. Local service companies: HVAC, lawn care, plumbing, roofing. Orlando FL. Call +1 321-415-55-40" />
+  <title>US Creative Paradise | Own Your Neighborhood | Orlando FL</title>
+  <meta name="description" content="Stop driving across the city. Get all your clients in one neighborhood. Buy 1 sign — we place it in 100 spots near you. HVAC, Plumbing, Electrical, Roofing, Lawn Care. Orlando FL." />
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18116989824"></script>
   <script>
@@ -12,616 +12,579 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'AW-18116989824', { 'send_page_view': true });
-
     function gtag_report_conversion(url) {
-      var callback = function () { if (typeof(url) !== 'undefined') { window.location = url; } };
-      gtag('event', 'conversion', { 'send_to': 'AW-18116989824/z9HRCKOI1aUcEICn7b5D', 'value': 1.0, 'currency': 'USD', 'event_callback': callback });
+      var cb = function(){ if(typeof url!=='undefined') window.location=url; };
+      gtag('event','conversion',{'send_to':'AW-18116989824/z9HRCKOI1aUcEICn7b5D','value':1.0,'currency':'USD','event_callback':cb});
       return false;
     }
-    function trackEvent(n, c, l) { gtag('event', n, { 'event_category': c, 'event_label': l }); }
-    function trackPhoneClick(url) { gtag('event', 'phone_click', { 'event_category': 'lead', 'event_label': 'phone_call' }); return gtag_report_conversion(url); }
-    function trackMessageClick() { gtag('event', 'message_click', { 'event_category': 'lead', 'event_label': 'sms_click' }); }
-    function trackFormSubmit() { gtag('event', 'form_submit', { 'event_category': 'lead', 'event_label': 'form_sent' }); }
-    function trackCTAClick(name) { gtag('event', 'cta_click', { 'event_category': 'engagement', 'event_label': name }); }
-    function trackOutboundClick(name) { gtag('event', 'outbound_click', { 'event_category': 'outbound', 'event_label': name }); }
-
-    document.addEventListener('click', function(e) {
-      var link = e.target.closest('a'); if (!link) return;
-      var href = link.getAttribute('href'); if (!href) return;
-      if (href.startsWith('tel:')) { e.preventDefault(); trackPhoneClick(href); return; }
-      if (href.startsWith('sms:')) { trackMessageClick(); }
-      if (href.startsWith('http') && !href.includes(window.location.hostname)) { trackOutboundClick(href); }
-      if (href.startsWith('#')) { trackCTAClick(href); }
+    function trackPhoneClick(url){ gtag('event','phone_click',{'event_category':'lead','event_label':'call'}); return gtag_report_conversion(url); }
+    function trackForm(){ gtag('event','form_submit',{'event_category':'lead','event_label':'form'}); }
+    document.addEventListener('click',function(e){
+      var a=e.target.closest('a'); if(!a) return;
+      var h=a.getAttribute('href'); if(!h) return;
+      if(h.startsWith('tel:')){ e.preventDefault(); trackPhoneClick(h); }
     });
-    document.addEventListener('submit', function(e) { trackFormSubmit(); });
-
-    let s25=false,s50=false,s75=false,s90=false;
-    window.addEventListener('scroll', function() {
-      const p = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
-      if (p>=25&&!s25){s25=true;trackEvent('scroll_25','engagement','25%');}
-      if (p>=50&&!s50){s50=true;trackEvent('scroll_50','engagement','50%');}
-      if (p>=75&&!s75){s75=true;trackEvent('scroll_75','engagement','75%');}
-      if (p>=90&&!s90){s90=true;trackEvent('scroll_90','engagement','90%');}
+    let s50=false,s90=false;
+    window.addEventListener('scroll',function(){
+      var p=Math.round((window.scrollY+window.innerHeight)/document.body.scrollHeight*100);
+      if(p>=50&&!s50){s50=true;gtag('event','scroll_50',{'event_category':'engagement'});}
+      if(p>=90&&!s90){s90=true;gtag('event','scroll_90',{'event_category':'engagement'});}
     });
   </script>
 
   <style>
-    * { box-sizing: border-box; }
-    :root {
-      --bg: #f8f5ef; --white: #ffffff; --black: #111111; --text: #1f1f1f;
-      --muted: #4f4f4f; --line: #e8dfd2; --gold: #d8a94f; --gold-light: #e7bd66;
-      --soft: #fbf8f2; --shadow: 0 12px 35px rgba(0,0,0,0.08); --shadow-strong: 0 18px 45px rgba(0,0,0,0.16);
+    *{ box-sizing:border-box; margin:0; padding:0; }
+    :root{
+      --black:#111; --white:#fff; --gold:#d8a94f; --gold2:#e7bd66;
+      --bg:#f8f5ef; --soft:#fbf8f2; --muted:#5a5a5a; --line:#e8dfd2;
+      --sh: 0 8px 30px rgba(0,0,0,0.09);
     }
-    body { margin: 0; font-family: Arial, sans-serif; background: var(--bg); color: var(--text); }
-    .hero { background: radial-gradient(circle at top right, #fff7e3 0%, #ffffff 38%, #ffffff 100%); padding: 52px 24px 54px; border-bottom: 1px solid var(--line); }
-    .container { max-width: 1180px; margin: 0 auto; }
-    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 38px; }
-    .brand { font-size: 23px; font-weight: 900; letter-spacing: -0.03em; }
-    .lang { display: flex; gap: 10px; flex-wrap: wrap; }
-    .lang button { background: var(--black); color: #fff; border: none; padding: 10px 16px; border-radius: 999px; font-size: 14px; font-weight: 800; cursor: pointer; transition: all 0.22s ease; }
-    .lang button:hover { background: var(--gold); color: #111; transform: translateY(-2px); }
-    .eyebrow { display: inline-block; padding: 9px 15px; margin-bottom: 18px; border-radius: 999px; background: #f2e6cc; color: #5c4300; font-weight: 900; font-size: 14px; }
-    h1 { margin: 0 0 18px; font-size: 60px; line-height: 1.03; color: var(--black); max-width: 990px; letter-spacing: -0.045em; }
-    .subtitle { margin: 0 0 26px; font-size: 24px; line-height: 1.48; color: var(--muted); max-width: 930px; }
-    .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin: 26px 0 30px; }
-    .btn { display: inline-block; padding: 17px 26px; border-radius: 14px; text-decoration: none; font-size: 18px; font-weight: 900; transition: all 0.24s ease; border: none; cursor: pointer; text-align: center; }
-    .btn:hover { transform: scale(1.05) translateY(-2px); box-shadow: var(--shadow-strong); }
-    .btn:active { transform: scale(0.96); }
-    .btn-primary { background: var(--black); color: #fff; }
-    .btn-secondary { background: var(--white); color: var(--black); border: 1px solid var(--line); }
-    .btn-third { background: var(--gold); color: #111; box-shadow: 0 8px 24px rgba(216,169,79,0.35); animation: softPulse 2.6s infinite; }
-    .btn-third:hover { background: var(--gold-light); }
-    @keyframes softPulse { 0%{box-shadow:0 0 0 0 rgba(216,169,79,0.45);}70%{box-shadow:0 0 0 12px rgba(216,169,79,0);}100%{box-shadow:0 0 0 0 rgba(216,169,79,0);} }
-    .trust { display: grid; grid-template-columns: repeat(3, minmax(220px, 1fr)); gap: 16px; margin-top: 12px; }
-    .trust-item { background: var(--soft); border: 1px solid var(--line); border-radius: 18px; padding: 20px; font-size: 18px; line-height: 1.45; color: #2f2f2f; font-weight: 800; box-shadow: var(--shadow); }
-    .section { max-width: 1180px; margin: 0 auto; padding: 70px 24px; }
-    .section h2 { margin: 0 0 16px; font-size: 44px; color: var(--black); line-height: 1.08; letter-spacing: -0.04em; }
-    .section p.lead { margin: 0 0 28px; font-size: 22px; color: var(--muted); max-width: 940px; line-height: 1.5; }
-    .three-col, .proof-list, .industry-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .card, .compare-box, .industry-card, .proof-strip { background: var(--white); border: 1px solid var(--line); border-radius: 22px; padding: 26px; box-shadow: var(--shadow); }
-    .card h3, .industry-card h3, .compare-box h3 { margin: 0 0 12px; font-size: 25px; color: var(--black); line-height: 1.15; }
-    .card p, .industry-card p { margin: 0; font-size: 18px; line-height: 1.55; color: var(--muted); }
-    .compare-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 20px; }
-    .compare-box ul { margin: 0; padding-left: 20px; }
-    .compare-box li { margin-bottom: 10px; font-size: 18px; line-height: 1.45; color: var(--muted); }
-    .compare-box.winner { border: 2px solid var(--gold); }
-    .compare-box.winner li { color: var(--text); font-weight: 700; }
-    .industry-card { cursor: pointer; transition: all 0.24s ease; }
-    .industry-card:hover { transform: translateY(-5px); border-color: var(--gold); box-shadow: var(--shadow-strong); }
-    .industry-card span { display: inline-block; margin-top: 16px; font-weight: 900; color: var(--black); border-bottom: 3px solid var(--gold); }
-    .proof-item { background: var(--soft); border-radius: 18px; padding: 22px; font-size: 18px; line-height: 1.45; font-weight: 800; }
-    .offer-strip { background: linear-gradient(135deg, #111111, #252017); color: #fff; border-radius: 26px; padding: 40px; box-shadow: var(--shadow-strong); }
-    .offer-strip h2 { margin: 0 0 14px; color: #fff; font-size: 44px; line-height: 1.08; }
-    .offer-strip p { margin: 0 0 22px; font-size: 22px; line-height: 1.45; color: #e6e6e6; }
-    .case-strip { background: linear-gradient(135deg, #0f2f0f, #1a4a1a); color: #fff; border-radius: 26px; padding: 40px; box-shadow: var(--shadow-strong); }
-    .case-strip h2 { margin: 0 0 16px; color: var(--gold); font-size: 36px; line-height: 1.1; }
-    .case-strip p { margin: 0 0 16px; font-size: 20px; line-height: 1.55; color: #d0d0d0; }
-    .case-result { background: rgba(216,169,79,0.12); border: 2px solid var(--gold); border-radius: 16px; padding: 20px 26px; margin-top: 10px; font-size: 26px; font-weight: 900; color: var(--gold); line-height: 1.3; }
-    .urgency-strip { background: linear-gradient(135deg, #8b0000, #cc0000); color: #fff; border-radius: 26px; padding: 40px; text-align: center; box-shadow: var(--shadow-strong); }
-    .urgency-strip h2 { margin: 0 0 14px; color: #fff; font-size: 40px; line-height: 1.05; letter-spacing: -0.03em; }
-    .urgency-strip p { margin: 0 0 18px; font-size: 20px; line-height: 1.5; color: rgba(255,255,255,0.9); }
-    .urgency-spots { display: inline-block; background: rgba(255,255,255,0.12); border: 2px solid rgba(255,255,255,0.6); border-radius: 14px; padding: 14px 28px; font-size: 22px; font-weight: 900; color: #fff; margin: 8px 0 18px; }
-    .form-box { margin-top: 20px; background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 26px; }
-    .form-box h3 { margin: 0 0 18px; font-size: 32px; color: var(--black); }
-    .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-    .form-grid input { width: 100%; padding: 16px; border: 1px solid #d8d8d8; border-radius: 12px; font-size: 16px; transition: all 0.2s ease; }
-    .form-grid input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px rgba(216,169,79,0.18); }
-    .full { grid-column: 1 / -1; }
-    .form-status { margin-top: 12px; font-size: 16px; color: #333; min-height: 22px; font-weight: 800; }
-    .mini-note { margin-top: 10px; font-size: 15px; color: #666; }
-    .footer { padding: 34px 24px 50px; color: #666; font-size: 15px; }
-    .footer a { color: #111; font-weight: 800; text-decoration: none; }
-    .footer a:hover { text-decoration: underline; }
-    @media (max-width: 980px) {
-      h1 { font-size: 44px; } .subtitle { font-size: 21px; }
-      .trust, .three-col, .compare-grid, .industry-grid, .proof-list, .form-grid { grid-template-columns: 1fr; }
-      .full { grid-column: auto; }
+    body{ font-family: Arial, sans-serif; background:var(--bg); color:var(--black); }
+
+    /* ─── NAV ─── */
+    .nav{ display:flex; align-items:center; justify-content:space-between; padding:18px 28px; background:var(--white); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:100; }
+    .nav-brand{ font-size:18px; font-weight:900; letter-spacing:-0.02em; }
+    .nav-lang{ display:flex; gap:8px; }
+    .nav-lang button{ background:var(--black); color:#fff; border:none; padding:8px 14px; border-radius:999px; font-size:13px; font-weight:800; cursor:pointer; transition:.2s; }
+    .nav-lang button:hover{ background:var(--gold); color:#111; }
+
+    /* ─── HERO ─── */
+    .hero{ padding:60px 24px 56px; background:linear-gradient(160deg,#fffbf2 0%,#fff 60%); border-bottom:1px solid var(--line); }
+    .hero-inner{ max-width:860px; margin:0 auto; }
+    .badge{ display:inline-block; background:#f2e6cc; color:#6b4c00; font-weight:900; font-size:13px; padding:7px 14px; border-radius:999px; margin-bottom:22px; }
+    .hero h1{ font-size:56px; line-height:1.05; letter-spacing:-0.04em; color:var(--black); margin-bottom:20px; }
+    .hero h1 span{ color:var(--gold); }
+    .hero-sub{ font-size:22px; line-height:1.55; color:var(--muted); margin-bottom:32px; max-width:740px; }
+    .cta-row{ display:flex; flex-wrap:wrap; gap:12px; margin-bottom:36px; }
+    .btn{ display:inline-block; padding:16px 28px; border-radius:14px; font-size:17px; font-weight:900; text-decoration:none; border:none; cursor:pointer; transition:.22s; text-align:center; }
+    .btn:hover{ transform:translateY(-2px) scale(1.04); box-shadow:0 12px 30px rgba(0,0,0,0.15); }
+    .btn-black{ background:var(--black); color:#fff; }
+    .btn-outline{ background:#fff; color:var(--black); border:2px solid var(--line); }
+    .btn-gold{ background:var(--gold); color:#111; animation:pulse 2.8s infinite; }
+    .btn-gold:hover{ background:var(--gold2); }
+    @keyframes pulse{ 0%{box-shadow:0 0 0 0 rgba(216,169,79,.5)} 70%{box-shadow:0 0 0 14px rgba(216,169,79,0)} 100%{box-shadow:0 0 0 0 rgba(216,169,79,0)} }
+    .hero-checks{ display:flex; flex-wrap:wrap; gap:12px; }
+    .hero-check{ background:var(--soft); border:1px solid var(--line); border-radius:12px; padding:12px 18px; font-size:15px; font-weight:700; color:#333; }
+
+    /* ─── SECTIONS ─── */
+    .section{ max-width:980px; margin:0 auto; padding:64px 24px; }
+    .section-center{ text-align:center; }
+    h2{ font-size:40px; line-height:1.1; letter-spacing:-0.035em; margin-bottom:14px; }
+    .section-lead{ font-size:20px; color:var(--muted); line-height:1.55; margin-bottom:36px; max-width:780px; }
+
+    /* ─── BEFORE / AFTER ─── */
+    .ba-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .ba-box{ border-radius:20px; padding:30px 26px; }
+    .ba-before{ background:#fff1f1; border:2px solid #f5c6c6; }
+    .ba-after{ background:#f0fff4; border:2px solid #a8e6b8; }
+    .ba-label{ font-size:12px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; margin-bottom:14px; opacity:.6; }
+    .ba-box ul{ padding-left:20px; }
+    .ba-box li{ font-size:17px; line-height:1.7; color:#333; }
+    .ba-box li + li{ margin-top:6px; }
+    .ba-before .ba-label{ color:#c00; }
+    .ba-after .ba-label{ color:#1a7a3a; }
+
+    /* ─── STEPS ─── */
+    .steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .step{ background:#fff; border:1px solid var(--line); border-radius:20px; padding:26px; box-shadow:var(--sh); }
+    .step-num{ font-size:32px; font-weight:900; color:var(--gold); margin-bottom:10px; }
+    .step h3{ font-size:20px; margin-bottom:8px; }
+    .step p{ font-size:16px; line-height:1.6; color:var(--muted); }
+
+    /* ─── PROOF STRIP ─── */
+    .proof-strip{ background:linear-gradient(135deg,#111,#222); border-radius:24px; padding:40px; color:#fff; text-align:center; }
+    .proof-big{ font-size:64px; font-weight:900; color:var(--gold); line-height:1; margin-bottom:10px; }
+    .proof-desc{ font-size:20px; color:rgba(255,255,255,.85); line-height:1.5; max-width:620px; margin:0 auto 18px; }
+    .proof-detail{ font-size:15px; color:rgba(255,255,255,.5); }
+
+    /* ─── COMPARE ─── */
+    .compare-grid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .compare-box{ background:#fff; border:1.5px solid var(--line); border-radius:20px; padding:28px; box-shadow:var(--sh); }
+    .compare-box.win{ border-color:var(--gold); }
+    .compare-box h3{ font-size:21px; margin-bottom:16px; }
+    .compare-box ul{ padding-left:20px; }
+    .compare-box li{ font-size:16px; line-height:1.7; color:var(--muted); margin-bottom:6px; }
+    .compare-box.win li{ color:#222; font-weight:600; }
+
+    /* ─── NICHES ─── */
+    .niches-top{ display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-bottom:18px; }
+    .niche-card{ background:#fff; border:1.5px solid var(--line); border-radius:18px; padding:22px 16px; text-align:center; cursor:pointer; transition:.22s; box-shadow:var(--sh); }
+    .niche-card:hover{ border-color:var(--gold); transform:translateY(-4px); }
+    .niche-icon{ font-size:32px; margin-bottom:10px; }
+    .niche-card h3{ font-size:16px; font-weight:900; margin-bottom:6px; }
+    .niche-card p{ font-size:13px; color:var(--muted); line-height:1.5; }
+    .niches-more{ background:var(--soft); border:1px solid var(--line); border-radius:14px; padding:16px 20px; font-size:15px; color:#555; line-height:1.6; }
+    .niches-more strong{ color:var(--black); }
+
+    /* ─── URGENCY ─── */
+    .urgency{ background:linear-gradient(135deg,#7a0000,#c00); border-radius:24px; padding:40px; text-align:center; color:#fff; }
+    .urgency h2{ color:#fff; margin-bottom:12px; }
+    .urgency p{ font-size:19px; color:rgba(255,255,255,.9); margin-bottom:24px; line-height:1.5; }
+    .urgency-badge{ display:inline-block; border:2px solid rgba(255,255,255,.5); border-radius:12px; padding:12px 26px; font-size:20px; font-weight:900; margin-bottom:26px; }
+
+    /* ─── FORM ─── */
+    .form-wrap{ background:linear-gradient(135deg,#111,#1c1a12); border-radius:24px; padding:44px; color:#fff; }
+    .form-wrap h2{ color:#fff; margin-bottom:10px; }
+    .form-wrap .form-sub{ font-size:18px; color:rgba(255,255,255,.7); margin-bottom:28px; }
+    .form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:18px; }
+    .form-grid input{ width:100%; padding:15px 16px; border:1.5px solid rgba(255,255,255,.15); background:rgba(255,255,255,.07); border-radius:12px; font-size:16px; color:#fff; transition:.2s; }
+    .form-grid input::placeholder{ color:rgba(255,255,255,.4); }
+    .form-grid input:focus{ outline:none; border-color:var(--gold); background:rgba(255,255,255,.1); }
+    .full{ grid-column:1/-1; }
+    .form-status{ margin-top:12px; font-size:15px; font-weight:700; min-height:20px; color:var(--gold); }
+    .form-note{ margin-top:10px; font-size:14px; color:rgba(255,255,255,.4); }
+
+    /* ─── FOOTER ─── */
+    .footer{ padding:28px 24px 40px; font-size:14px; color:#888; max-width:980px; margin:0 auto; }
+    .footer a{ color:#555; font-weight:700; text-decoration:none; }
+    .footer a:hover{ text-decoration:underline; }
+
+    /* ─── RESPONSIVE ─── */
+    @media(max-width:860px){
+      .hero h1{ font-size:40px; }
+      .ba-grid,.compare-grid,.form-grid{ grid-template-columns:1fr; }
+      .full{ grid-column:auto; }
+      .steps{ grid-template-columns:1fr; }
+      .niches-top{ grid-template-columns:repeat(2,1fr); }
     }
-    @media (max-width: 640px) {
-      .topbar { align-items: flex-start; flex-direction: column; }
-      h1 { font-size: 36px; } .subtitle { font-size: 19px; } .btn { width: 100%; }
-      .offer-strip h2, .section h2, .case-strip h2, .urgency-strip h2 { font-size: 30px; }
-      .hero { padding-top: 34px; }
+    @media(max-width:560px){
+      .hero h1{ font-size:32px; }
+      .hero-sub{ font-size:18px; }
+      h2{ font-size:30px; }
+      .proof-big{ font-size:48px; }
+      .btn{ width:100%; }
+      .niches-top{ grid-template-columns:1fr; }
+      .urgency h2, .form-wrap h2{ font-size:26px; }
     }
   </style>
 </head>
 <body>
 
-  <section class="hero">
-    <div class="container">
-      <div class="topbar">
-        <div class="brand">US Creative Paradise</div>
-        <div class="lang">
-          <button onclick="setLang('en')">EN</button>
-          <button onclick="setLang('ru')">RU</button>
-          <button onclick="setLang('es')">ES</button>
-        </div>
-      </div>
-      <div class="eyebrow" id="eyebrow"></div>
-      <h1 id="title"></h1>
-      <p class="subtitle" id="subtitle"></p>
-      <div class="cta-row">
-        <a id="callBtn" class="btn btn-primary" href="tel:+13214155540">CALL NOW</a>
-        <a id="textBtn" class="btn btn-secondary" href="sms:+13214155540">TEXT NOW</a>
-        <a class="btn btn-third" href="#quote-form" id="jumpBtn">GET FREE SPOTS</a>
-      </div>
-      <div class="trust">
-        <div class="trust-item" id="trust1"></div>
-        <div class="trust-item" id="trust2"></div>
-        <div class="trust-item" id="trust3"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2 id="howTitle"></h2>
-    <p class="lead" id="howLead"></p>
-    <div class="three-col">
-      <div class="card"><h3 id="step1Title"></h3><p id="step1Text"></p></div>
-      <div class="card"><h3 id="step2Title"></h3><p id="step2Text"></p></div>
-      <div class="card"><h3 id="step3Title"></h3><p id="step3Text"></p></div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="proof-strip">
-      <h2 id="proofTitle"></h2>
-      <p class="lead" id="proofLead"></p>
-      <div class="proof-list">
-        <div class="proof-item" id="proof1"></div>
-        <div class="proof-item" id="proof2"></div>
-        <div class="proof-item" id="proof3"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="case-strip">
-      <h2 id="caseTitle"></h2>
-      <p id="caseText"></p>
-      <div class="case-result" id="caseResult"></div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2 id="compareTitle"></h2>
-    <p class="lead" id="compareLead"></p>
-    <div class="compare-grid">
-      <div class="compare-box">
-        <h3 id="adsTitle"></h3>
-        <ul>
-          <li id="ads1"></li><li id="ads2"></li><li id="ads3"></li><li id="ads4"></li>
-        </ul>
-      </div>
-      <div class="compare-box winner">
-        <h3 id="systemTitle"></h3>
-        <ul>
-          <li id="system1"></li><li id="system2"></li><li id="system3"></li><li id="system4"></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2 id="industriesTitle"></h2>
-    <p class="lead" id="industriesLead"></p>
-    <div class="industry-grid">
-      <div class="industry-card" onclick="selectIndustry('Lawn Care')"><h3 id="ind1Title"></h3><p id="ind1Text"></p><span id="indCta1"></span></div>
-      <div class="industry-card" onclick="selectIndustry('HVAC')"><h3 id="ind2Title"></h3><p id="ind2Text"></p><span id="indCta2"></span></div>
-      <div class="industry-card" onclick="selectIndustry('Plumbing')"><h3 id="ind3Title"></h3><p id="ind3Text"></p><span id="indCta3"></span></div>
-      <div class="industry-card" onclick="selectIndustry('Electrical')"><h3 id="ind4Title"></h3><p id="ind4Text"></p><span id="indCta4"></span></div>
-      <div class="industry-card" onclick="selectIndustry('Roofing')"><h3 id="ind5Title"></h3><p id="ind5Text"></p><span id="indCta5"></span></div>
-      <div class="industry-card" onclick="selectIndustry('Pest Control')"><h3 id="ind6Title"></h3><p id="ind6Text"></p><span id="indCta6"></span></div>
-      <div class="industry-card" onclick="selectIndustry('Power Washing')"><h3 id="ind7Title"></h3><p id="ind7Text"></p><span id="indCta7"></span></div>
-      <div class="industry-card" onclick="selectIndustry('Cleaning')"><h3 id="ind8Title"></h3><p id="ind8Text"></p><span id="indCta8"></span></div>
-      <div class="industry-card" onclick="selectIndustry('Handyman')"><h3 id="ind9Title"></h3><p id="ind9Text"></p><span id="indCta9"></span></div>
-      <div class="industry-card" onclick="selectIndustry('Landscaping')"><h3 id="ind10Title"></h3><p id="ind10Text"></p><span id="indCta10"></span></div>
-      <div class="industry-card" onclick="selectIndustry('Garage Door')"><h3 id="ind11Title"></h3><p id="ind11Text"></p><span id="indCta11"></span></div>
-      <div class="industry-card" onclick="selectIndustry('Fencing')"><h3 id="ind12Title"></h3><p id="ind12Text"></p><span id="indCta12"></span></div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="urgency-strip">
-      <h2 id="urgencyTitle"></h2>
-      <p id="urgencyText"></p>
-      <div class="urgency-spots" id="urgencySpots"></div>
-      <div class="cta-row" style="justify-content:center;margin-top:18px;">
-        <a id="urgencyCallBtn" class="btn" style="background:#fff;color:#111;font-weight:900;" href="tel:+13214155540"></a>
-        <a class="btn btn-third" href="#quote-form" id="urgencyJumpBtn"></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="offer-strip">
-      <h2 id="finalTitle"></h2>
-      <p id="finalText"></p>
-      <div class="cta-row">
-        <a id="finalCallBtn" class="btn btn-primary" href="tel:+13214155540">CALL NOW</a>
-        <a id="finalTextBtn" class="btn btn-secondary" href="sms:+13214155540">TEXT NOW</a>
-      </div>
-      <div class="form-box" id="quote-form">
-        <h3 id="formTitle"></h3>
-        <div class="form-grid">
-          <input id="name" class="full" type="text" />
-          <input id="phone" type="text" />
-          <input id="business" type="text" />
-          <input id="neighborhood" class="full" type="text" />
-        </div>
-        <div class="cta-row" style="margin-top:18px;">
-          <button id="quoteBtn" class="btn btn-third" onclick="sendLead()" type="button">GET FREE SPOTS</button>
-        </div>
-        <div id="formStatus" class="form-status"></div>
-        <div class="mini-note" id="formNote"></div>
-      </div>
-    </div>
-  </section>
-
-  <div class="footer container">
-    US Creative Paradise · Orlando, FL · <a href="tel:+13214155540">+1 321-415-55-40</a>
-    <br><br>
-    <a href="/privacy-policy.html">Privacy Policy</a> | <a href="/terms-and-conditions.html">Terms &amp; Conditions</a>
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-brand">US Creative Paradise</div>
+  <div class="nav-lang">
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('ru')">RU</button>
+    <button onclick="setLang('es')">ES</button>
   </div>
+</nav>
 
-  <script>
-    const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbwiPw2BQ0Ok81-ysLa1iOm2IBfh8svEyjvV_-l8vVtGQZgpf-tZxbOkv8PSGzYZlQNOAg/exec";
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="badge" id="badge"></div>
+    <h1 id="h1"></h1>
+    <p class="hero-sub" id="heroSub"></p>
+    <div class="cta-row">
+      <a class="btn btn-black" href="tel:+13214155540" id="btnCall"></a>
+      <a class="btn btn-outline" href="sms:+13214155540" id="btnText"></a>
+      <a class="btn btn-gold" href="#form" id="btnQuote"></a>
+    </div>
+    <div class="hero-checks">
+      <div class="hero-check" id="chk1"></div>
+      <div class="hero-check" id="chk2"></div>
+      <div class="hero-check" id="chk3"></div>
+    </div>
+  </div>
+</section>
 
-    const content = {
-      en: {
-        eyebrow: "Offline Targeting · For Local Service Companies · Orlando FL",
-        title: "Buy 1 Sign — Get 100 Ad Placements FREE",
-        subtitle: "We place your signs in 100 spots across your neighborhood. Neighbors see your brand every single day. Neighbors call you — not your competition.",
-        trust1: "✓ 1 sign printed · 100 locations placed — all included",
-        trust2: "✓ Pay once — signs work 24/7 with zero monthly fees",
-        trust3: "✓ All your clients in the same neighborhood — less driving, more jobs",
-        howTitle: "How it works — 3 steps",
-        howLead: "You buy one sign. We do the rest. Your neighborhood gets saturated with your brand.",
-        step1Title: "1. Buy 1 Sign",
-        step1Text: "Pay only for the production of your sign. No monthly fees. No subscriptions. No hidden costs. One payment — done.",
-        step2Title: "2. We Place It in 100 Spots",
-        step2Text: "We distribute your signs across 100 strategic locations in your target neighborhood. Every street. Every corner. Your brand is impossible to miss.",
-        step3Title: "3. Your Phone Starts Ringing",
-        step3Text: "Neighbors see your name everywhere. When they need a service, they call the company they already know. That company is yours.",
-        proofTitle: "Your client's neighbor is 10X more likely to hire you",
-        proofLead: "The smartest service companies put a sign on every job they complete. Here is why it works so well:",
-        proof1: "👁 They watched you work — you are already vetted. Zero doubt, zero risk in their mind.",
-        proof2: "🏡 They see the result every day — your work is live proof right in their neighborhood.",
-        proof3: "💬 They trust a neighbor's yard sign more than any Google ad. You are already endorsed.",
-        caseTitle: "Real result: Lawn care company, Orlando FL",
-        caseText: "Before: Google Ads, expensive, clients scattered across the entire city. 40-minute drives for one job. After: We placed their signs throughout one neighborhood and saturated it completely.",
-        caseResult: "3 weeks later — 80% of all new leads came from that same neighborhood. They now completely dominate that area.",
-        compareTitle: "Why neighborhood signs beat Google Ads",
-        compareLead: "Google sends you clients from anywhere in the city. We send you clients from YOUR neighborhood — 5 minutes away.",
-        adsTitle: "❌ Google Ads",
-        ads1: "Pay $500–$2,000 every single month just to stay visible",
-        ads2: "Clients scattered all over the city — 40+ minute drives",
-        ads3: "Stop paying → instantly lose ALL your visibility",
-        ads4: "Competing against thousands of other ads at the same time",
-        systemTitle: "✓ Our Neighborhood Signs",
-        system1: "One-time payment for production only — no monthly fees ever",
-        system2: "All clients in your same neighborhood — 5 minutes away",
-        system3: "Signs work 24/7 for FREE — zero ongoing cost after placement",
-        system4: "100 placement spots included FREE as our gift to you",
-        industriesTitle: "This works for these service companies",
-        industriesLead: "Any local service that works neighborhood by neighborhood. If your clients are homeowners, this system is built for you.",
-        indCta: "Get your neighborhood →",
-        ind1Title: "Lawn Care",
-        ind1Text: "Lawns are visible to every neighbor. One sign after each job means the whole street sees your work and remembers your name.",
-        ind2Title: "HVAC",
-        ind2Text: "When AC fails in July, people call who they remember first. Be visible on every street before the emergency hits.",
-        ind3Title: "Plumbing",
-        ind3Text: "Urgent calls go to the company people have seen before. If your sign is already in the neighborhood, you get the call first.",
-        ind4Title: "Electrical",
-        ind4Text: "Electrical work requires deep trust. Repeated local visibility builds that trust before they ever pick up the phone.",
-        ind5Title: "Roofing",
-        ind5Text: "After one roof job, every neighbor notices. Your sign on that lawn turns one completed job into five new calls.",
-        ind6Title: "Pest Control",
-        ind6Text: "Pests spread neighborhood-wide. One client's sign signals to all neighbors that you are already trusted in the area.",
-        ind7Title: "Power Washing",
-        ind7Text: "Clean driveways and fences are visible to everyone on the street. Your sign says: I did that work — and I can do yours.",
-        ind8Title: "Cleaning",
-        ind8Text: "Repeat clients, word of mouth, neighborhood trust. A sign after each job builds all three simultaneously.",
-        ind9Title: "Handyman",
-        ind9Text: "Handyman jobs are everywhere — and won by whoever is remembered most. Be that company in your neighborhood.",
-        ind10Title: "Landscaping",
-        ind10Text: "Landscaping results are on display 24/7 for every passerby. Your brand sign stays attached to the beautiful yard you created.",
-        ind11Title: "Garage Door",
-        ind11Text: "Every neighbor sees a new garage door installation happen. Your sign is proof of the transformation — they will call next.",
-        ind12Title: "Fencing",
-        ind12Text: "New fences are neighborhood landmarks. Your sign on the property converts every curious neighbor who walks by.",
-        urgencyTitle: "ONLY 5 NEIGHBORHOODS THIS MONTH",
-        urgencyText: "We work with ONE company per neighborhood. First one in owns the area. Second one loses to them — permanently.",
-        urgencySpots: "Available spots: 5 of 5",
-        urgencyJump: "CLAIM YOUR NEIGHBORHOOD NOW",
-        finalTitle: "Ready to own your neighborhood?",
-        finalText: "Tell us your target area. We print your sign and place it in 100 spots. Your phone starts ringing within weeks.",
-        formTitle: "Get Your Free Placement Quote",
-        formNote: "4 quick fields. No pressure. We will show you exactly how to dominate your neighborhood.",
-        namePlaceholder: "Your name",
-        phonePlaceholder: "Best phone number",
-        businessPlaceholder: "Your business type (lawn care, HVAC, plumbing...)",
-        neighborhoodPlaceholder: "Which neighborhood or zip code do you want to target?",
-        call: "CALL NOW",
-        text: "TEXT NOW",
-        quote: "CLAIM 100 FREE SPOTS",
-        jump: "CLAIM 100 FREE SPOTS",
-        sent: "Request sent! We will call you within 24 hours.",
-        error: "Error. Please try again or call us directly.",
-        fill: "Please fill in all fields."
-      },
+<!-- BEFORE / AFTER -->
+<div class="section">
+  <div class="ba-grid">
+    <div class="ba-box ba-before">
+      <div class="ba-label" id="baBeforeLabel"></div>
+      <ul id="baBeforeList"></ul>
+    </div>
+    <div class="ba-box ba-after">
+      <div class="ba-label" id="baAfterLabel"></div>
+      <ul id="baAfterList"></ul>
+    </div>
+  </div>
+</div>
 
-      ru: {
-        eyebrow: "Офлайн Таргетинг · Для локальных сервисных компаний · Орландо FL",
-        title: "Купи 1 Знак — Получи 100 Мест Размещения БЕСПЛАТНО",
-        subtitle: "Мы расставляем твои знаки в 100 точках твоего района. Соседи видят твой бренд каждый день. Соседи звонят тебе — а не конкурентам.",
-        trust1: "✓ 1 знак напечатан · 100 мест размещено — всё включено",
-        trust2: "✓ Платишь один раз — знаки работают 24/7 без ежемесячной оплаты",
-        trust3: "✓ Все клиенты рядом — меньше езды, больше заказов",
-        howTitle: "Как это работает — 3 шага",
-        howLead: "Ты покупаешь один знак. Всё остальное делаем мы. Твой район насыщается твоим брендом.",
-        step1Title: "1. Купи 1 знак",
-        step1Text: "Платишь только за производство знака. Никаких ежемесячных платежей. Без подписок. Без скрытых затрат. Один платёж — и всё.",
-        step2Title: "2. Мы расставляем его в 100 точках",
-        step2Text: "Мы размещаем твои знаки в 100 стратегических точках твоего целевого района. Каждая улица. Каждый угол. Твой бренд — везде.",
-        step3Title: "3. Твой телефон начинает звонить",
-        step3Text: "Соседи видят твоё имя везде. Когда им нужна услуга, они звонят компании, которую уже знают. Эта компания — ты.",
-        proofTitle: "Сосед твоего клиента в 10 РАЗ вероятнее наймёт тебя",
-        proofLead: "Умные сервисные компании ставят знак на каждом объекте после завершения работы. Вот почему это работает так хорошо:",
-        proof1: "👁 Они видели как ты работал — ты уже проверен. Ноль сомнений, ноль риска в голове соседа.",
-        proof2: "🏡 Они видят результат каждый день — твоя работа живёт прямо в их районе как доказательство.",
-        proof3: "💬 Они доверяют знаку на газоне соседа больше, чем любой рекламе Google. Ты уже одобрен.",
-        caseTitle: "Реальный результат: компания по уходу за газонами, Орландо FL",
-        caseText: "До: Google Ads, дорого, клиенты по всему городу. Поездки по 40 минут на один заказ. После: Мы расставили их знаки в одном районе и полностью насытили его.",
-        caseResult: "Через 3 недели — 80% всех новых заявок из того же района. Теперь они полностью доминируют в этой зоне.",
-        compareTitle: "Почему знаки в районе лучше Google Ads",
-        compareLead: "Google приводит клиентов со всего города. Мы приводим клиентов из ТВОЕГО района — в 5 минутах от тебя.",
-        adsTitle: "❌ Google Реклама",
-        ads1: "Платишь $500–$2,000 каждый месяц просто чтобы оставаться на виду",
-        ads2: "Клиенты по всему городу — поездки по 40+ минут",
-        ads3: "Перестал платить → мгновенно потерял ВСЮ видимость",
-        ads4: "Конкурируешь с тысячами других объявлений одновременно",
-        systemTitle: "✓ Наши знаки в районе",
-        system1: "Единоразовая оплата только за производство — без ежемесячных платежей",
-        system2: "Все клиенты в одном районе — в 5 минутах от тебя",
-        system3: "Знаки работают 24/7 БЕСПЛАТНО — ноль текущих затрат",
-        system4: "100 мест размещения включены БЕСПЛАТНО в подарок",
-        industriesTitle: "Это работает для этих сервисных компаний",
-        industriesLead: "Любой локальный сервис, работающий по районам. Если твои клиенты — домовладельцы, эта система создана для тебя.",
-        indCta: "Захватить район →",
-        ind1Title: "Газонокосение",
-        ind1Text: "Газоны видны всем соседям. Один знак после каждого заказа — и вся улица видит твою работу и запоминает твоё имя.",
-        ind2Title: "HVAC",
-        ind2Text: "Когда в июле ломается кондиционер, звонят тому, кого вспоминают первым. Будь виден на каждой улице до аварийной ситуации.",
-        ind3Title: "Сантехника",
-        ind3Text: "Срочные вызовы идут в компанию, которую видели раньше. Если твой знак уже в районе — звонок получишь ты.",
-        ind4Title: "Электрика",
-        ind4Text: "Электрика требует глубокого доверия. Постоянная локальная видимость строит это доверие ещё до первого звонка.",
-        ind5Title: "Кровля",
-        ind5Text: "После одной крыши каждый сосед замечает. Твой знак на том газоне превращает один заказ в пять звонков.",
-        ind6Title: "Уничтожение вредителей",
-        ind6Text: "Вредители распространяются по всему району. Знак у одного клиента сигнализирует всем соседям, что ты уже проверен здесь.",
-        ind7Title: "Мойка высоким давлением",
-        ind7Text: "Чистые подъезды и заборы видны всем на улице. Твой знак говорит: эту работу сделал я — и я сделаю твою.",
-        ind8Title: "Клининг",
-        ind8Text: "Повторные клиенты, сарафанное радио, доверие района. Знак после каждого заказа строит всё три одновременно.",
-        ind9Title: "Handyman",
-        ind9Text: "Работ полно везде — побеждает тот, кого лучше помнят. Будь этой компанией в своём районе.",
-        ind10Title: "Ландшафтный дизайн",
-        ind10Text: "Результаты ландшафта видны 24/7 каждому прохожему. Твой знак остаётся с красивым двором, который ты создал.",
-        ind11Title: "Гаражные ворота",
-        ind11Text: "Каждый сосед видит установку новых гаражных ворот. Твой знак — доказательство трансформации. Следующим позвонят тебе.",
-        ind12Title: "Заборы",
-        ind12Text: "Новые заборы — ориентиры района. Твой знак на участке конвертирует каждого любопытного соседа.",
-        urgencyTitle: "ТОЛЬКО 5 РАЙОНОВ В ЭТОМ МЕСЯЦЕ",
-        urgencyText: "Мы работаем с ОДНОЙ компанией на один район. Первый занимает территорию. Второй проигрывает им — навсегда.",
-        urgencySpots: "Свободных мест: 5 из 5",
-        urgencyJump: "ЗАНЯТЬ СВОЙ РАЙОН СЕЙЧАС",
-        finalTitle: "Готов захватить свой район?",
-        finalText: "Скажи нам свою зону. Напечатаем знак и расставим в 100 точках. Телефон начнёт звонить через несколько недель.",
-        formTitle: "Получить бесплатный расчёт",
-        formNote: "4 быстрых поля. Без давления. Покажем как именно доминировать в твоём районе.",
-        namePlaceholder: "Твоё имя",
-        phonePlaceholder: "Лучший номер телефона",
-        businessPlaceholder: "Тип бизнеса (газон, HVAC, сантехника...)",
-        neighborhoodPlaceholder: "Какой район или zip code хочешь захватить?",
-        call: "ПОЗВОНИТЬ",
-        text: "НАПИСАТЬ",
-        quote: "ПОЛУЧИТЬ 100 БЕСПЛАТНЫХ МЕСТ",
-        jump: "ПОЛУЧИТЬ 100 БЕСПЛАТНЫХ МЕСТ",
-        sent: "Заявка отправлена! Позвоним в течение 24 часов.",
-        error: "Ошибка. Попробуй ещё раз или позвони напрямую.",
-        fill: "Заполни все поля."
-      },
+<!-- HOW IT WORKS -->
+<div class="section">
+  <h2 id="stepsTitle"></h2>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><h3 id="s1t"></h3><p id="s1p"></p></div>
+    <div class="step"><div class="step-num">2</div><h3 id="s2t"></h3><p id="s2p"></p></div>
+    <div class="step"><div class="step-num">3</div><h3 id="s3t"></h3><p id="s3p"></p></div>
+  </div>
+</div>
 
-      es: {
-        eyebrow: "Targeting Offline · Para Compañías Locales de Servicio · Orlando FL",
-        title: "Compra 1 Letrero — Recibe 100 Espacios Publicitarios GRATIS",
-        subtitle: "Colocamos tus letreros en 100 puntos de tu vecindario. Los vecinos ven tu marca todos los días. Los vecinos te llaman A TI — no a tu competencia.",
-        trust1: "✓ 1 letrero impreso · 100 ubicaciones colocadas — todo incluido",
-        trust2: "✓ Pagas una vez — los letreros trabajan 24/7 sin mensualidades",
-        trust3: "✓ Todos tus clientes en el mismo vecindario — menos manejo, más trabajos",
-        howTitle: "Cómo funciona — 3 pasos",
-        howLead: "Compras un letrero. Nosotros hacemos el resto. Tu vecindario se satura con tu marca.",
-        step1Title: "1. Compra 1 letrero",
-        step1Text: "Solo pagas por la producción del letrero. Sin mensualidades. Sin suscripciones. Sin costos ocultos. Un pago — y listo.",
-        step2Title: "2. Lo colocamos en 100 puntos",
-        step2Text: "Distribuimos tus letreros en 100 ubicaciones estratégicas en tu vecindario objetivo. Cada calle. Cada esquina. Tu marca es imposible de ignorar.",
-        step3Title: "3. Tu teléfono empieza a sonar",
-        step3Text: "Los vecinos ven tu nombre en todos lados. Cuando necesitan un servicio, llaman a la empresa que ya conocen. Esa empresa es la tuya.",
-        proofTitle: "El vecino de tu cliente tiene 10 VECES más probabilidades de contratarte",
-        proofLead: "Las empresas de servicio más exitosas ponen un letrero en cada trabajo que completan. Por eso funciona tan bien:",
-        proof1: "👁 Te vieron trabajar — ya estás aprobado. Cero dudas, cero riesgo en su mente.",
-        proof2: "🏡 Ven el resultado todos los días — tu trabajo vive en su vecindario como prueba real.",
-        proof3: "💬 Confían en el letrero del vecino más que en cualquier anuncio de Google. Ya estás endorsado.",
-        caseTitle: "Resultado real: empresa de cuidado de jardines, Orlando FL",
-        caseText: "Antes: Google Ads, caro, clientes por toda la ciudad. 40 minutos de manejo para un solo trabajo. Después: Colocamos sus letreros en un vecindario y lo saturamos completamente.",
-        caseResult: "3 semanas después — 80% de todos los nuevos clientes vinieron de ese mismo vecindario. Ahora dominan completamente esa área.",
-        compareTitle: "Por qué los letreros en el vecindario superan a Google Ads",
-        compareLead: "Google te manda clientes de cualquier parte de la ciudad. Nosotros te mandamos clientes de TU vecindario — a 5 minutos.",
-        adsTitle: "❌ Google Ads",
-        ads1: "Pagas $500–$2,000 cada mes solo para seguir visible",
-        ads2: "Clientes por toda la ciudad — viajes de 40+ minutos",
-        ads3: "Dejas de pagar → pierdes TODA la visibilidad al instante",
-        ads4: "Compites contra miles de otros anuncios al mismo tiempo",
-        systemTitle: "✓ Nuestros Letreros en el Vecindario",
-        system1: "Pago único solo por producción — sin mensualidades nunca",
-        system2: "Todos los clientes en tu vecindario — a 5 minutos",
-        system3: "Los letreros trabajan 24/7 GRATIS — cero costo continuo",
-        system4: "100 espacios de colocación incluidos GRATIS como regalo",
-        industriesTitle: "Esto funciona para estas compañías de servicio",
-        industriesLead: "Cualquier servicio local que trabaja vecindario por vecindario. Si tus clientes son propietarios de casas, este sistema es para ti.",
-        indCta: "Obtener mi vecindario →",
-        ind1Title: "Cuidado de Jardines",
-        ind1Text: "Los jardines son visibles para todos los vecinos. Un letrero después de cada trabajo — toda la calle ve tu trabajo y recuerda tu nombre.",
-        ind2Title: "HVAC",
-        ind2Text: "Cuando falla el AC en julio, llaman al nombre que recuerdan primero. Sé visible en cada calle antes de que llegue la emergencia.",
-        ind3Title: "Plomería",
-        ind3Text: "Las llamadas urgentes van a la empresa que la gente ha visto antes. Si tu letrero ya está en el vecindario, recibes la llamada primero.",
-        ind4Title: "Electricidad",
-        ind4Text: "El trabajo eléctrico necesita confianza profunda. La visibilidad local constante construye esa confianza antes del primer llamado.",
-        ind5Title: "Roofing",
-        ind5Text: "Después de un techo, cada vecino lo nota. Tu letrero en ese jardín convierte un trabajo terminado en cinco nuevas llamadas.",
-        ind6Title: "Control de Plagas",
-        ind6Text: "Las plagas se extienden por todo el vecindario. El letrero en un cliente señala a todos los vecinos que ya eres de confianza en el área.",
-        ind7Title: "Lavado a Presión",
-        ind7Text: "Las entradas y cercas limpias son visibles para todos. Tu letrero dice: yo hice ese trabajo — y puedo hacer el tuyo.",
-        ind8Title: "Limpieza",
-        ind8Text: "Clientes recurrentes, boca a boca, confianza del vecindario. Un letrero después de cada trabajo construye los tres al mismo tiempo.",
-        ind9Title: "Handyman",
-        ind9Text: "Trabajos de handyman hay en todos lados — y gana quien más se recuerda. Sé esa empresa en tu vecindario.",
-        ind10Title: "Landscaping",
-        ind10Text: "Los resultados de landscaping se ven 24/7 por todos los que pasan. Tu letrero permanece con el hermoso jardín que creaste.",
-        ind11Title: "Puertas de Garaje",
-        ind11Text: "Cada vecino ve una nueva instalación de puerta de garaje. Tu letrero es prueba de la transformación — llamarán después.",
-        ind12Title: "Cercas",
-        ind12Text: "Las cercas nuevas son puntos de referencia del vecindario. Tu letrero convierte a cada vecino curioso que pasa.",
-        urgencyTitle: "SOLO 5 VECINDARIOS ESTE MES",
-        urgencyText: "Trabajamos con UNA empresa por vecindario. El primero domina el área. El segundo les pierde — para siempre.",
-        urgencySpots: "Lugares disponibles: 5 de 5",
-        urgencyJump: "RECLAMAR MI VECINDARIO AHORA",
-        finalTitle: "¿Listo para dominar tu vecindario?",
-        finalText: "Dinos tu área objetivo. Imprimimos tu letrero y lo colocamos en 100 puntos. Tu teléfono empieza a sonar en pocas semanas.",
-        formTitle: "Obtén tu cotización gratuita",
-        formNote: "4 campos rápidos. Sin presión. Te mostraremos exactamente cómo dominar tu vecindario.",
-        namePlaceholder: "Tu nombre",
-        phonePlaceholder: "Mejor número de teléfono",
-        businessPlaceholder: "Tipo de negocio (jardines, HVAC, plomería...)",
-        neighborhoodPlaceholder: "¿Qué vecindario o zip code quieres dominar?",
-        call: "LLAMAR AHORA",
-        text: "ESCRIBIR AHORA",
-        quote: "RECLAMAR 100 ESPACIOS GRATIS",
-        jump: "RECLAMAR 100 ESPACIOS GRATIS",
-        sent: "¡Solicitud enviada! Te llamaremos en 24 horas.",
-        error: "Error. Intenta de nuevo o llámanos directo.",
-        fill: "Completa todos los campos."
-      }
-    };
+<!-- PROOF -->
+<div class="section">
+  <div class="proof-strip">
+    <div class="proof-big" id="proofBig"></div>
+    <p class="proof-desc" id="proofDesc"></p>
+    <p class="proof-detail" id="proofDetail"></p>
+  </div>
+</div>
 
-    let currentLang = "en";
+<!-- COMPARE -->
+<div class="section">
+  <h2 id="cmpTitle"></h2>
+  <p class="section-lead" id="cmpLead"></p>
+  <div class="compare-grid">
+    <div class="compare-box">
+      <h3 id="cmpBadTitle"></h3>
+      <ul id="cmpBadList"></ul>
+    </div>
+    <div class="compare-box win">
+      <h3 id="cmpGoodTitle"></h3>
+      <ul id="cmpGoodList"></ul>
+    </div>
+  </div>
+</div>
 
-    function setLang(lang) {
-      currentLang = lang;
-      const c = content[lang];
-      document.getElementById("eyebrow").innerText = c.eyebrow;
-      document.getElementById("title").innerText = c.title;
-      document.getElementById("subtitle").innerText = c.subtitle;
-      document.getElementById("trust1").innerText = c.trust1;
-      document.getElementById("trust2").innerText = c.trust2;
-      document.getElementById("trust3").innerText = c.trust3;
-      document.getElementById("howTitle").innerText = c.howTitle;
-      document.getElementById("howLead").innerText = c.howLead;
-      document.getElementById("step1Title").innerText = c.step1Title;
-      document.getElementById("step1Text").innerText = c.step1Text;
-      document.getElementById("step2Title").innerText = c.step2Title;
-      document.getElementById("step2Text").innerText = c.step2Text;
-      document.getElementById("step3Title").innerText = c.step3Title;
-      document.getElementById("step3Text").innerText = c.step3Text;
-      document.getElementById("proofTitle").innerText = c.proofTitle;
-      document.getElementById("proofLead").innerText = c.proofLead;
-      document.getElementById("proof1").innerText = c.proof1;
-      document.getElementById("proof2").innerText = c.proof2;
-      document.getElementById("proof3").innerText = c.proof3;
-      document.getElementById("caseTitle").innerText = c.caseTitle;
-      document.getElementById("caseText").innerText = c.caseText;
-      document.getElementById("caseResult").innerText = c.caseResult;
-      document.getElementById("compareTitle").innerText = c.compareTitle;
-      document.getElementById("compareLead").innerText = c.compareLead;
-      document.getElementById("adsTitle").innerText = c.adsTitle;
-      document.getElementById("ads1").innerText = c.ads1;
-      document.getElementById("ads2").innerText = c.ads2;
-      document.getElementById("ads3").innerText = c.ads3;
-      document.getElementById("ads4").innerText = c.ads4;
-      document.getElementById("systemTitle").innerText = c.systemTitle;
-      document.getElementById("system1").innerText = c.system1;
-      document.getElementById("system2").innerText = c.system2;
-      document.getElementById("system3").innerText = c.system3;
-      document.getElementById("system4").innerText = c.system4;
-      document.getElementById("industriesTitle").innerText = c.industriesTitle;
-      document.getElementById("industriesLead").innerText = c.industriesLead;
-      for (let i = 1; i <= 12; i++) {
-        document.getElementById("ind" + i + "Title").innerText = c["ind" + i + "Title"];
-        document.getElementById("ind" + i + "Text").innerText = c["ind" + i + "Text"];
-        document.getElementById("indCta" + i).innerText = c.indCta;
-      }
-      document.getElementById("urgencyTitle").innerText = c.urgencyTitle;
-      document.getElementById("urgencyText").innerText = c.urgencyText;
-      document.getElementById("urgencySpots").innerText = c.urgencySpots;
-      document.getElementById("urgencyCallBtn").innerText = c.call;
-      document.getElementById("urgencyJumpBtn").innerText = c.urgencyJump;
-      document.getElementById("finalTitle").innerText = c.finalTitle;
-      document.getElementById("finalText").innerText = c.finalText;
-      document.getElementById("formTitle").innerText = c.formTitle;
-      document.getElementById("formNote").innerText = c.formNote;
-      document.getElementById("callBtn").innerText = c.call;
-      document.getElementById("textBtn").innerText = c.text;
-      document.getElementById("finalCallBtn").innerText = c.call;
-      document.getElementById("finalTextBtn").innerText = c.text;
-      document.getElementById("quoteBtn").innerText = c.quote;
-      document.getElementById("jumpBtn").innerText = c.jump;
-      document.getElementById("name").placeholder = c.namePlaceholder;
-      document.getElementById("phone").placeholder = c.phonePlaceholder;
-      document.getElementById("business").placeholder = c.businessPlaceholder;
-      document.getElementById("neighborhood").placeholder = c.neighborhoodPlaceholder;
+<!-- NICHES -->
+<div class="section">
+  <h2 id="nichesTitle"></h2>
+  <p class="section-lead" id="nichesLead"></p>
+  <div class="niches-top">
+    <div class="niche-card" onclick="pick('HVAC')"><div class="niche-icon">❄️</div><h3 id="n1t"></h3><p id="n1p"></p></div>
+    <div class="niche-card" onclick="pick('Plumbing')"><div class="niche-icon">🔧</div><h3 id="n2t"></h3><p id="n2p"></p></div>
+    <div class="niche-card" onclick="pick('Electrical')"><div class="niche-icon">⚡</div><h3 id="n3t"></h3><p id="n3p"></p></div>
+    <div class="niche-card" onclick="pick('Roofing')"><div class="niche-icon">🏠</div><h3 id="n4t"></h3><p id="n4p"></p></div>
+    <div class="niche-card" onclick="pick('Lawn Care')"><div class="niche-icon">🌿</div><h3 id="n5t"></h3><p id="n5p"></p></div>
+  </div>
+  <div class="niches-more" id="nichesMore"></div>
+</div>
+
+<!-- URGENCY -->
+<div class="section">
+  <div class="urgency">
+    <h2 id="urgTitle"></h2>
+    <p id="urgText"></p>
+    <div class="urgency-badge" id="urgBadge"></div>
+    <div class="cta-row" style="justify-content:center;">
+      <a class="btn btn-gold" href="#form" id="urgBtn"></a>
+      <a class="btn" style="background:#fff;color:#111;" href="tel:+13214155540" id="urgCall"></a>
+    </div>
+  </div>
+</div>
+
+<!-- FORM -->
+<div class="section" id="form">
+  <div class="form-wrap">
+    <h2 id="formTitle"></h2>
+    <p class="form-sub" id="formSub"></p>
+    <div class="form-grid">
+      <input id="fName" class="full" type="text" />
+      <input id="fPhone" type="text" />
+      <input id="fBiz" type="text" />
+      <input id="fArea" class="full" type="text" />
+    </div>
+    <button class="btn btn-gold" onclick="send()" id="fBtn" style="width:100%;font-size:19px;padding:18px;"></button>
+    <div class="form-status" id="fStatus"></div>
+    <div class="form-note" id="fNote"></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  US Creative Paradise · Orlando, FL ·
+  <a href="tel:+13214155540">+1 321-415-55-40</a>
+  &nbsp;·&nbsp;
+  <a href="/privacy-policy.html">Privacy Policy</a> ·
+  <a href="/terms-and-conditions.html">Terms</a>
+</div>
+
+<script>
+const WH = "https://script.google.com/macros/s/AKfycbwiPw2BQ0Ok81-ysLa1iOm2IBfh8svEyjvV_-l8vVtGQZgpf-tZxbOkv8PSGzYZlQNOAg/exec";
+
+const C = {
+  en: {
+    badge: "HVAC · Plumbing · Electrical · Roofing · Lawn Care",
+    h1: "All your clients — one neighborhood.\nNo more driving across the city.",
+    heroSub: "Buy one sign. We place it in 100 spots near your home. Neighbors see your name every day — and when they need your service, they call you.",
+    btnCall: "📞 Call Now",
+    btnText: "💬 Text Us",
+    btnQuote: "Get 100 Free Spots →",
+    chk1: "✓ Pay once — signs work forever",
+    chk2: "✓ All jobs 5–10 min from home",
+    chk3: "✓ Neighbors call you — not a stranger",
+
+    baBeforeLabel: "Right now",
+    baBefore: ["Drive 40 min to one client", "Finish the job. Drive back 40 min.", "Gas, time, stress — every single day", "Clients all over the city, spread thin"],
+    baAfterLabel: "With us",
+    baAfter: ["Finish one job — walk next door", "Whole neighborhood calls you", "All jobs 5 min from each other", "Same hours, way more done"],
+
+    stepsTitle: "How it works — that's all",
+    s1t: "You buy one sign",
+    s1p: "Just the printing cost. No monthly fee, no subscription, nothing else.",
+    s2t: "We cover 100 spots near you",
+    s2p: "We put your sign on every corner, every street in the neighborhood you want to own.",
+    s3t: "Neighbors start calling",
+    s3p: "They see your name every day. You become the obvious choice. Phone rings.",
+
+    proofBig: "80%",
+    proofDesc: "of all new calls came from ONE neighborhood — just 3 weeks after we placed the signs.",
+    proofDetail: "Lawn care company, Orlando FL. Before: clients scattered across the city. After: door to door, all day long.",
+
+    cmpTitle: "Google sends you anyone. We send you your neighbors.",
+    cmpLead: "Think about it — do you want a client 45 minutes away, or a client two streets over?",
+    cmpBadTitle: "❌ Google Ads",
+    cmpBad: ["Pay $500–2,000 every single month", "Clients anywhere in the city", "Stop paying — disappear overnight", "40-min drives all day long"],
+    cmpGoodTitle: "✓ Your Neighborhood Signs",
+    cmpGood: ["Pay once — signs stay up forever", "All clients 5–10 min from you", "No monthly cost, ever", "100 spots included free with every sign"],
+
+    nichesTitle: "Works great for these businesses",
+    nichesLead: "If you go to your clients — this is for you.",
+    n1t: "HVAC", n1p: "When AC breaks in August, they call who they already know.",
+    n2t: "Plumbing", n2p: "Burst pipe, clogged drain — they don't Google. They call the name they remember.",
+    n3t: "Electrical", n3p: "Trust is everything. Your sign in the neighborhood builds it before they ever call.",
+    n4t: "Roofing", n4p: "One roof — the whole street sees it. Your sign turns one job into five calls.",
+    n5t: "Lawn Care", n5p: "Every lawn on the block is a future client. One sign says: I work right here.",
+    nichesMore: "Also works for: <strong>Pest Control · Power Washing · Cleaning · Handyman · Landscaping · Garage Door · Fencing · Window Cleaning</strong> — any service that goes to the client.",
+
+    urgTitle: "Only 5 neighborhoods left this month",
+    urgText: "One neighborhood — one company. First one in owns it. Second one loses it permanently.",
+    urgBadge: "5 of 5 spots still available",
+    urgBtn: "Claim My Neighborhood →",
+    urgCall: "📞 Call Now",
+
+    formTitle: "Want to own your neighborhood?",
+    formSub: "4 quick fields. We'll call you and tell you exactly how it works for your area.",
+    fName: "Your name",
+    fPhone: "Best phone number",
+    fBiz: "What kind of business? (HVAC, lawn care...)",
+    fArea: "Which neighborhood or zip code do you want?",
+    fBtn: "Get 100 Free Spots — Call Me Back",
+    fNote: "No pressure. Just a quick call to see if your area is available.",
+    ok: "Done! We'll call you within a few hours.",
+    err: "Something went wrong. Just call us directly — +1 321-415-55-40",
+    fill: "Please fill in all fields."
+  },
+
+  ru: {
+    badge: "HVAC · Сантехника · Электрика · Кровля · Газон",
+    h1: "Все клиенты рядом — один район, весь твой.\nХватит ездить через весь город.",
+    heroSub: "Купи один знак. Мы расставим его в 100 точках рядом с тобой. Соседи будут видеть твоё имя каждый день — и звонить тебе.",
+    btnCall: "📞 Позвонить",
+    btnText: "💬 Написать",
+    btnQuote: "Получить 100 мест бесплатно →",
+    chk1: "✓ Платишь один раз — знаки работают навсегда",
+    chk2: "✓ Все заказы в 5–10 минутах от дома",
+    chk3: "✓ Соседи звонят тебе — не конкурентам",
+
+    baBeforeLabel: "Сейчас",
+    baBefore: ["Едешь 40 минут к одному клиенту", "Выполняешь заказ. Едешь обратно 40 минут.", "Бензин, время, нервы — каждый день", "Клиенты по всему городу — тратишь половину дня на дорогу"],
+    baAfterLabel: "С нами",
+    baAfter: ["Закончил заказ — зашёл к соседу", "Весь район звонит тебе", "Все заказы в 5 минутах друг от друга", "Те же часы работы — в разы больше заработал"],
+
+    stepsTitle: "Как это работает — просто",
+    s1t: "Покупаешь один знак",
+    s1p: "Платишь только за печать. Никаких подписок, ежемесячных платежей — ничего лишнего.",
+    s2t: "Мы покрываем 100 точек рядом с тобой",
+    s2p: "Расставляем твой знак на каждом углу, каждой улице в нужном тебе районе.",
+    s3t: "Соседи начинают звонить",
+    s3p: "Они видят твоё имя каждый день. Ты становишься очевидным выбором. Телефон звонит.",
+
+    proofBig: "80%",
+    proofDesc: "всех новых звонков пришли из ОДНОГО района — всего через 3 недели после расстановки знаков.",
+    proofDetail: "Компания по уходу за газонами, Орландо. До: клиенты по всему городу. После: из двери в дверь, весь день.",
+
+    cmpTitle: "Google приводит кого попало. Мы приводим твоих соседей.",
+    cmpLead: "Подумай — ты хочешь клиента в 40 минутах езды или клиента за углом?",
+    cmpBadTitle: "❌ Google Ads",
+    cmpBad: ["Платишь $500–2,000 каждый месяц", "Клиенты где угодно в городе", "Перестал платить — исчез за ночь", "Поездки по 40 минут весь день"],
+    cmpGoodTitle: "✓ Твои знаки в районе",
+    cmpGood: ["Платишь один раз — знаки стоят вечно", "Все клиенты в 5–10 минутах от тебя", "Никаких ежемесячных платежей никогда", "100 мест размещения включены бесплатно"],
+
+    nichesTitle: "Работает отлично для этих бизнесов",
+    nichesLead: "Если ты едешь к клиентам — это для тебя.",
+    n1t: "HVAC", n1p: "Когда ломается кондиционер — звонят тому, кого уже знают.",
+    n2t: "Сантехника", n2p: "Труба лопнула — не гуглят. Звонят тому, кого видели в районе.",
+    n3t: "Электрика", n3p: "Тут важно доверие. Твой знак строит его ещё до первого звонка.",
+    n4t: "Кровля", n4p: "Одна крыша — вся улица смотрит. Один знак превращает это в пять заказов.",
+    n5t: "Газон", n5p: "Каждый газон во дворе — потенциальный клиент. Один знак говорит: здесь работаю я.",
+    nichesMore: "Также подходит для: <strong>Уничтожение вредителей · Мойка высоким давлением · Клининг · Handyman · Ландшафт · Гаражные ворота · Заборы · Мытьё окон</strong> — любой сервис, который едет к клиенту.",
+
+    urgTitle: "В этом месяце осталось только 5 районов",
+    urgText: "Один район — одна компания. Кто первый — тот владеет. Второй остаётся ни с чем.",
+    urgBadge: "Свободно: 5 из 5 мест",
+    urgBtn: "Занять свой район →",
+    urgCall: "📞 Позвонить",
+
+    formTitle: "Хочешь захватить свой район?",
+    formSub: "4 поля. Мы перезвоним и расскажем как именно это работает для твоей зоны.",
+    fName: "Твоё имя",
+    fPhone: "Лучший номер телефона",
+    fBiz: "Чем занимаешься? (HVAC, газон...)",
+    fArea: "Какой район или zip code хочешь?",
+    fBtn: "Получить 100 мест — Перезвоните мне",
+    fNote: "Без давления. Просто короткий звонок чтобы проверить есть ли твой район.",
+    ok: "Готово! Позвоним в течение нескольких часов.",
+    err: "Что-то пошло не так. Позвони нам напрямую — +1 321-415-55-40",
+    fill: "Заполни все поля."
+  },
+
+  es: {
+    badge: "HVAC · Plomería · Electricidad · Roofing · Jardines",
+    h1: "Todos tus clientes cerca — un vecindario, todo tuyo.\nDeja de manejar por toda la ciudad.",
+    heroSub: "Compra un letrero. Lo colocamos en 100 puntos cerca de tu casa. Los vecinos ven tu nombre todos los días — y cuando necesitan tu servicio, te llaman a ti.",
+    btnCall: "📞 Llamar Ahora",
+    btnText: "💬 Escribirnos",
+    btnQuote: "Obtener 100 Lugares Gratis →",
+    chk1: "✓ Pagas una vez — los letreros duran para siempre",
+    chk2: "✓ Todos los trabajos a 5–10 min de casa",
+    chk3: "✓ Los vecinos te llaman a ti — no a otro",
+
+    baBeforeLabel: "Ahora mismo",
+    baBefore: ["Manejas 40 min para un solo cliente", "Terminas el trabajo. Manejas 40 min de regreso.", "Gasolina, tiempo, estrés — todos los días", "Clientes por toda la ciudad, llegas tarde a todo"],
+    baAfterLabel: "Con nosotros",
+    baAfter: ["Terminas un trabajo — tocas la siguiente puerta", "Todo el vecindario te llama a ti", "Todos los trabajos a 5 min uno del otro", "Las mismas horas — el doble de trabajo hecho"],
+
+    stepsTitle: "Cómo funciona — así de simple",
+    s1t: "Compras un letrero",
+    s1p: "Solo pagas la impresión. Sin mensualidades, sin contratos, sin nada más.",
+    s2t: "Cubrimos 100 puntos cerca de ti",
+    s2p: "Colocamos tu letrero en cada esquina, cada calle del vecindario que quieres dominar.",
+    s3t: "Los vecinos empiezan a llamar",
+    s3p: "Ven tu nombre todos los días. Eres la opción obvia. El teléfono suena.",
+
+    proofBig: "80%",
+    proofDesc: "de todas las llamadas nuevas vinieron de UN solo vecindario — solo 3 semanas después de colocar los letreros.",
+    proofDetail: "Empresa de cuidado de jardines, Orlando FL. Antes: clientes por toda la ciudad. Después: de puerta en puerta, todo el día.",
+
+    cmpTitle: "Google te manda cualquiera. Nosotros te mandamos tus vecinos.",
+    cmpLead: "Piénsalo — ¿quieres un cliente a 40 minutos o uno a dos cuadras de tu casa?",
+    cmpBadTitle: "❌ Google Ads",
+    cmpBad: ["Pagas $500–2,000 cada mes", "Clientes en cualquier parte de la ciudad", "Dejas de pagar — desapareces de la noche a la mañana", "40 min de manejo todo el día"],
+    cmpGoodTitle: "✓ Tus Letreros en el Vecindario",
+    cmpGood: ["Pagas una vez — los letreros duran para siempre", "Todos los clientes a 5–10 min de ti", "Sin costo mensual, nunca", "100 espacios gratis incluidos con cada letrero"],
+
+    nichesTitle: "Funciona perfecto para estos negocios",
+    nichesLead: "Si tú vas donde están tus clientes — esto es para ti.",
+    n1t: "HVAC", n1p: "Cuando falla el AC en agosto, llaman al nombre que ya conocen.",
+    n2t: "Plomería", n2p: "Tubería rota — no buscan en Google. Llaman al nombre que vieron en el vecindario.",
+    n3t: "Electricidad", n3p: "Aquí la confianza lo es todo. Tu letrero la construye antes de que te llamen.",
+    n4t: "Roofing", n4p: "Un techo — toda la calle lo ve. Un letrero convierte ese trabajo en cinco llamadas.",
+    n5t: "Jardines", n5p: "Cada jardín en la cuadra es un cliente futuro. Un letrero dice: aquí trabajo yo.",
+    nichesMore: "También funciona para: <strong>Control de Plagas · Lavado a Presión · Limpieza · Handyman · Landscaping · Puertas de Garaje · Cercas · Limpieza de Ventanas</strong> — cualquier servicio que va donde el cliente.",
+
+    urgTitle: "Solo quedan 5 vecindarios este mes",
+    urgText: "Un vecindario — una empresa. El primero que llega se lo queda. El segundo se queda sin nada.",
+    urgBadge: "Disponibles: 5 de 5 lugares",
+    urgBtn: "Reclamar Mi Vecindario →",
+    urgCall: "📞 Llamar Ahora",
+
+    formTitle: "¿Quieres dominar tu vecindario?",
+    formSub: "4 campos rápidos. Te llamamos y te explicamos cómo funciona exactamente para tu zona.",
+    fName: "Tu nombre",
+    fPhone: "Mejor número de teléfono",
+    fBiz: "¿A qué te dedicas? (HVAC, jardines...)",
+    fArea: "¿Qué vecindario o zip code quieres?",
+    fBtn: "Obtener 100 Lugares — Llámenme",
+    fNote: "Sin presión. Solo una llamada rápida para ver si tu área está disponible.",
+    ok: "¡Listo! Te llamamos en pocas horas.",
+    err: "Algo salió mal. Llámanos directo — +1 321-415-55-40",
+    fill: "Completa todos los campos."
+  }
+};
+
+let lang = "en";
+
+function setLang(l) {
+  lang = l;
+  const c = C[l];
+
+  document.getElementById("badge").innerText = c.badge;
+  document.getElementById("h1").innerText = c.h1;
+  document.getElementById("heroSub").innerText = c.heroSub;
+  document.getElementById("btnCall").innerText = c.btnCall;
+  document.getElementById("btnText").innerText = c.btnText;
+  document.getElementById("btnQuote").innerText = c.btnQuote;
+  document.getElementById("chk1").innerText = c.chk1;
+  document.getElementById("chk2").innerText = c.chk2;
+  document.getElementById("chk3").innerText = c.chk3;
+
+  document.getElementById("baBeforeLabel").innerText = c.baBeforeLabel;
+  document.getElementById("baAfterLabel").innerText = c.baAfterLabel;
+  const bl = document.getElementById("baBeforeList");
+  const al = document.getElementById("baAfterList");
+  bl.innerHTML = c.baBefore.map(x=>`<li>${x}</li>`).join("");
+  al.innerHTML = c.baAfter.map(x=>`<li>${x}</li>`).join("");
+
+  document.getElementById("stepsTitle").innerText = c.stepsTitle;
+  document.getElementById("s1t").innerText = c.s1t; document.getElementById("s1p").innerText = c.s1p;
+  document.getElementById("s2t").innerText = c.s2t; document.getElementById("s2p").innerText = c.s2p;
+  document.getElementById("s3t").innerText = c.s3t; document.getElementById("s3p").innerText = c.s3p;
+
+  document.getElementById("proofBig").innerText = c.proofBig;
+  document.getElementById("proofDesc").innerText = c.proofDesc;
+  document.getElementById("proofDetail").innerText = c.proofDetail;
+
+  document.getElementById("cmpTitle").innerText = c.cmpTitle;
+  document.getElementById("cmpLead").innerText = c.cmpLead;
+  document.getElementById("cmpBadTitle").innerText = c.cmpBadTitle;
+  document.getElementById("cmpGoodTitle").innerText = c.cmpGoodTitle;
+  document.getElementById("cmpBadList").innerHTML = c.cmpBad.map(x=>`<li>${x}</li>`).join("");
+  document.getElementById("cmpGoodList").innerHTML = c.cmpGood.map(x=>`<li>${x}</li>`).join("");
+
+  document.getElementById("nichesTitle").innerText = c.nichesTitle;
+  document.getElementById("nichesLead").innerText = c.nichesLead;
+  document.getElementById("n1t").innerText = c.n1t; document.getElementById("n1p").innerText = c.n1p;
+  document.getElementById("n2t").innerText = c.n2t; document.getElementById("n2p").innerText = c.n2p;
+  document.getElementById("n3t").innerText = c.n3t; document.getElementById("n3p").innerText = c.n3p;
+  document.getElementById("n4t").innerText = c.n4t; document.getElementById("n4p").innerText = c.n4p;
+  document.getElementById("n5t").innerText = c.n5t; document.getElementById("n5p").innerText = c.n5p;
+  document.getElementById("nichesMore").innerHTML = c.nichesMore;
+
+  document.getElementById("urgTitle").innerText = c.urgTitle;
+  document.getElementById("urgText").innerText = c.urgText;
+  document.getElementById("urgBadge").innerText = c.urgBadge;
+  document.getElementById("urgBtn").innerText = c.urgBtn;
+  document.getElementById("urgCall").innerText = c.urgCall;
+
+  document.getElementById("formTitle").innerText = c.formTitle;
+  document.getElementById("formSub").innerText = c.formSub;
+  document.getElementById("fName").placeholder = c.fName;
+  document.getElementById("fPhone").placeholder = c.fPhone;
+  document.getElementById("fBiz").placeholder = c.fBiz;
+  document.getElementById("fArea").placeholder = c.fArea;
+  document.getElementById("fBtn").innerText = c.fBtn;
+  document.getElementById("fNote").innerText = c.fNote;
+  document.getElementById("fStatus").innerText = "";
+}
+
+function pick(biz) {
+  document.getElementById("fBiz").value = biz;
+  document.getElementById("form").scrollIntoView({ behavior: "smooth" });
+  setTimeout(() => document.getElementById("fName").focus(), 500);
+}
+
+async function send() {
+  const c = C[lang];
+  const data = {
+    name: document.getElementById("fName").value.trim(),
+    phone: document.getElementById("fPhone").value.trim(),
+    business: document.getElementById("fBiz").value.trim(),
+    source: document.getElementById("fArea").value.trim()
+  };
+  if (!data.name || !data.phone || !data.business || !data.source) {
+    document.getElementById("fStatus").innerText = c.fill;
+    return;
+  }
+  trackForm();
+  document.getElementById("fStatus").innerText = "...";
+  try {
+    const r = await fetch(WH, { method:"POST", body: JSON.stringify(data) });
+    document.getElementById("fStatus").innerText = r.ok ? c.ok : c.err;
+    if (r.ok) {
+      document.getElementById("fName").value = "";
+      document.getElementById("fPhone").value = "";
+      document.getElementById("fBiz").value = "";
+      document.getElementById("fArea").value = "";
     }
+  } catch(e) {
+    document.getElementById("fStatus").innerText = c.err;
+  }
+}
 
-    function selectIndustry(industry) {
-      document.getElementById("business").value = industry;
-      document.getElementById("quote-form").scrollIntoView({ behavior: "smooth" });
-      setTimeout(() => document.getElementById("name").focus(), 500);
-    }
-
-    async function sendLead() {
-      const c = content[currentLang];
-      const data = {
-        name: document.getElementById("name").value.trim(),
-        phone: document.getElementById("phone").value.trim(),
-        business: document.getElementById("business").value.trim(),
-        source: document.getElementById("neighborhood").value.trim()
-      };
-      if (!data.name || !data.phone || !data.business || !data.source) {
-        document.getElementById("formStatus").innerText = c.fill;
-        return;
-      }
-      trackFormSubmit();
-      document.getElementById("formStatus").innerText = "...";
-      try {
-        const response = await fetch(WEBHOOK_URL, { method: "POST", body: JSON.stringify(data) });
-        if (response.ok) {
-          document.getElementById("formStatus").innerText = c.sent;
-          document.getElementById("name").value = "";
-          document.getElementById("phone").value = "";
-          document.getElementById("business").value = "";
-          document.getElementById("neighborhood").value = "";
-        } else {
-          document.getElementById("formStatus").innerText = c.error;
-        }
-      } catch (e) {
-        document.getElementById("formStatus").innerText = c.error;
-      }
-    }
-
-    setLang("en");
-  </script>
+setLang("en");
+</script>
 </body>
 </html>
